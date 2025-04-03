@@ -1,12 +1,11 @@
 # Nombre del juego
 
 ## Equipo
-- <Nombre 1 y roles>
-- <Nombre 2 y roles>
-- <Nombre 3 y roles>
-- <Nombre 4 y roles>
-- <Nombre 5 y roles>
-- <Nombre 6 y roles>
+- Álvaro Rojo Díez, 4ºGIC, Jefe de Proyecto 
+- Rubén Pradanas Martín 1ºGIC Programación, diseño de niveles, sonido y diseño gráfico. 
+- Alan Czyz, 1º GISI, Pruebas, Diseño de niveles, Programación 
+- Álvaro González López, 1º GII, arte y sonido, niveles 
+- Pedro Julián Martínez, 1º GISI, Pruebas, Diseño de niveles, diseño gráfico y sonido 
 
 Modificar lo que sigue a voluntad para que queden unas instrucciones mínimas de cómo ejecutar el juego y de cómo es el *gameplay*.
 
