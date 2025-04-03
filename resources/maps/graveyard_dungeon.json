@@ -5,7 +5,7 @@
  "layers":[
         {
          "compression":"zlib",
-         "data":"eJxjYEAAZUbcGJc8wwjRj46dKdRPqf3k6nfGox8dkKMOV3gPtH5y0gUl+kmJP3roH2rhR21\/ker\/wRZ\/I0U\/OWAw6R\/o8CMVAwCjlDT9",
+         "data":"eJxTZmRgUCYCgwAx6oarfnTsTEWz6InR3Y0PkKMOV3gPtH5S0wWl+onF9NI\/1MIPBEKAdCgQh1HBX6T6f7DF30jRT2rcDDb9Ax1+pGIAOp48Uw==",
          "encoding":"base64",
          "height":32,
          "id":9,
@@ -19,7 +19,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJzVUu0KgCAM3MP1\/hBZEEW9Sv2YpMPDM1RqMPy87XabyGPT7WvCHXh3EtsY7IfEffjOnHvjD4nrm\/V+0\/Oiq+h6kvmRsfxZvOeZ65v3nYyf44XmgsUjHWrhrS6IJ8Ln8qI+tNLX9s\/i\/X9UH+KBeLXWz8a3dfWeXxu\/tH7WWH5\/wSMdkds+f6WOt3g0J8hrzU9p3lD\/C2VNpeY=",
+         "data":"eJy9VFEKwjAMfVDv4WW8oj9+65\/+6UHGxkAUdhVbtkKNeWk6mA9CtrSvfUnT9gCeFRswo1fiHXQciu9O+DLO+HKeh5\/07XezodDt5b\/wnd9bxMfFY\/GTUz+DN3+LLzV7zk3mZ61fegatL1r4afwYgEu0c\/jlefjaf\/asRlIn42s4KToz8n5b1Veen+Tn+Sw\/poPp2qJ+1voyr3\/3L7v\/Vv6pH1pg9Y8Xa\/jXuO8trOffI\/dB+FodrTdogr5OiZaxLfkaPPdkVGIs\/1bU7mfNUn9\/ACjHufk=",
          "encoding":"base64",
          "height":32,
          "id":2,
@@ -28,6 +28,99 @@
          "type":"tilelayer",
          "visible":true,
          "width":16,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "compression":"zlib",
+         "data":"eJxjYBgFo4By0MvMwDAXiOcw08e+LgrtmUQnd44C+gBS0wO6elLTw2j6GRjgSgW91DBjuAAAHy0GSg==",
+         "encoding":"base64",
+         "height":32,
+         "id":12,
+         "name":"detalles",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":16,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":11,
+         "name":"sculpture",
+         "objects":[
+                {
+                 "gid":68,
+                 "height":32,
+                 "id":29,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":448,
+                 "y":576
+                }, 
+                {
+                 "gid":71,
+                 "height":32,
+                 "id":31,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":384,
+                 "y":898
+                }, 
+                {
+                 "height":94,
+                 "id":35,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":30,
+                 "x":449,
+                 "y":323
+                }, 
+                {
+                 "height":29,
+                 "id":38,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":27,
+                 "x":451,
+                 "y":544
+                }, 
+                {
+                 "height":95,
+                 "id":39,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":31,
+                 "x":449,
+                 "y":610
+                }, 
+                {
+                 "height":93,
+                 "id":41,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":33,
+                 "x":64,
+                 "y":611
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
          "x":0,
          "y":0
         }, 
@@ -222,8 +315,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":11,
- "nextobjectid":15,
+ "nextlayerid":13,
+ "nextobjectid":44,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -232,7 +325,7 @@
          "value":"#ff0a0a0a"
         }],
  "renderorder":"left-up",
- "tiledversion":"1.8.4",
+ "tiledversion":"1.11.2",
  "tileheight":32,
  "tilesets":[
         {
@@ -241,6 +334,6 @@
         }],
  "tilewidth":32,
  "type":"map",
- "version":"1.8",
+ "version":"1.10",
  "width":16
 }
