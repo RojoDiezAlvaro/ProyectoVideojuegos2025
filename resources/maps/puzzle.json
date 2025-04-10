@@ -506,20 +506,6 @@
          "width":48,
          "x":0,
          "y":0
-        }, 
-        {
-         "compression":"zlib",
-         "data":"eJztlkEOgCAMBE38Fvz\/W8qBo92mtK6Y3YQTDDvGBGjncTRj9Hs8pQO2mh9pxry3n8XPNax++ctf\/nF+rkHnlzXYPBoobB7tvbLmDT66d1a\/\/Ln98uf2Z\/A7n5\/s+yeDt74N\/d9qHkX+tTyK\/Gt5lD\/4s88\/9vs\/MpfFR\/fO6pc\/t1\/+3H75c\/tXefb9U\/3+93y\/NVf5\/vD0o8g\/znv6UeQf5z39KF\/wZ59\/K7yVHe6v6N5Z\/fLn9suf2y9\/bv\/K+T5yAeNvmgU=",
-         "encoding":"base64",
-         "height":48,
-         "id":24,
-         "name":"piedra",
-         "opacity":1,
-         "type":"tilelayer",
-         "visible":false,
-         "width":48,
-         "x":0,
-         "y":0
         }],
  "nextlayerid":63,
  "nextobjectid":46,
