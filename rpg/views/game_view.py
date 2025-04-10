@@ -194,6 +194,9 @@ class GameView(arcade.View):
             self.my_map = self.map_list[self.cur_map_name]
         except KeyError:
             raise KeyError(f"Unable to find map named '{map_name}'.")
+        if self.my_map.music:
+            #Añadir aqui el codigo para crear una variable "cancion" desde el path de la musica
+            #Meter la cancion en una variable
 
         if self.my_map.background_color:
             arcade.set_background_color(self.my_map.background_color)
@@ -230,7 +233,7 @@ class GameView(arcade.View):
         """Set up the game variables. Call to re-start the game."""
 
         # Create the player character
-        self.player_sprite = PlayerSprite(":characters:Female/Female 18-4.png")
+        self.player_sprite = PlayerSprite(":characters:Male/Male 01-4.png")
 
         # Spawn the player
         start_x = constants.STARTING_X
