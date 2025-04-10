@@ -32,7 +32,6 @@ def load_map(map_name):
 
     game_map = GameMap()
     game_map.map_layers = OrderedDict()
-
     game_map.light_layer = LightLayer(100, 100)
 
     # List of blocking sprites

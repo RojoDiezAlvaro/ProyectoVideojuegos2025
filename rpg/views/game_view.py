@@ -8,6 +8,7 @@ from typing import Callable
 
 import arcade
 import arcade.gui
+from pathlib import Path
 import rpg.constants as constants
 from arcade.experimental.lights import Light
 from pyglet.math import Vec2
@@ -157,6 +158,9 @@ class GameView(arcade.View):
         # Name of map we are on
         self.cur_map_name = None
 
+        #Name of map we were
+        self.last_map_name = None
+
         self.message_box = None
 
         # Selected Items Hotbar
@@ -180,6 +184,9 @@ class GameView(arcade.View):
         mode = "soft"
         color = arcade.csscolor.WHITE
         self.player_light = Light(x, y, radius, color, mode)
+
+        # Music player
+        self.musica = None
 
     def switch_map(self, map_name, start_x, start_y):
         """
@@ -213,6 +220,12 @@ class GameView(arcade.View):
 
         if self.my_map.light_layer:
             self.my_map.light_layer.resize(self.window.width, self.window.height)
+
+        try:
+            self.play_music()
+        except AttributeError:
+            pass
+
 
     def setup_physics(self):
         if self.noclip_status:
@@ -657,3 +670,26 @@ class GameView(arcade.View):
         cur_map = self.map_list[self.cur_map_name]
         if cur_map.light_layer:
             cur_map.light_layer.resize(width, height)
+
+    def play_music(self):
+        current_path = Path.cwd()
+        path_padre = current_path.parent
+        maps_path = path_padre / 'resources' / 'maps'
+
+        if self.last_map_name != self.my_map:
+            self.last_map_name = self.my_map
+            nombre_mapa = self.cur_map_name + ".json"
+            ruta_json = maps_path / nombre_mapa
+            with open(ruta_json, "r", encoding="utf-8") as archivo:
+                datos = json.load(archivo)
+            musica = datos.get("music")
+            ruta_musica = path_padre / 'resources' / 'sounds' / musica
+            #self.musica = arcade.load_sound(ruta_musica)
+            #self.musica_player = arcade.play_sound(self.musica, looping=True)
+            if hasattr(self, "musica_player") and self.musica_player and self.musica_player.playing:
+                self.musica_player.stop()
+
+                # Cargar y reproducir la nueva música
+            self.musica = arcade.load_sound(ruta_musica)
+            self.musica_player = self.musica.play(loop=True)
+
