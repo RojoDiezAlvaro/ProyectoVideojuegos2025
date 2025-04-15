@@ -25,7 +25,6 @@ class DebugMenu(arcade.gui.UIBorder, arcade.gui.UIWindowLikeMixin):
         noclip_callback: Callable,
         hyper_callback: Callable,
     ):
-
         self.off_style = {
             "bg_color": arcade.color.BLACK,
         }
@@ -676,20 +675,27 @@ class GameView(arcade.View):
         path_padre = current_path.parent
         maps_path = path_padre / 'resources' / 'maps'
 
-        if self.last_map_name != self.my_map:
-            self.last_map_name = self.my_map
-            nombre_mapa = self.cur_map_name + ".json"
-            ruta_json = maps_path / nombre_mapa
-            with open(ruta_json, "r", encoding="utf-8") as archivo:
-                datos = json.load(archivo)
-            musica = datos.get("music")
-            ruta_musica = path_padre / 'resources' / 'sounds' / musica
-            #self.musica = arcade.load_sound(ruta_musica)
-            #self.musica_player = arcade.play_sound(self.musica, looping=True)
-            if hasattr(self, "musica_player") and self.musica_player and self.musica_player.playing:
+        def stop_music(self):
+            if hasattr(self, "musica_player") and self.musica_player:
                 self.musica_player.stop()
+                self.musica_player = None
 
-                # Cargar y reproducir la nueva música
-            self.musica = arcade.load_sound(ruta_musica)
-            self.musica_player = self.musica.play(loop=True)
+        if self.last_map_name != self.my_map:
+            # Detener música anterior
+            stop_music(self)
 
+            self.last_map_name = self.my_map
+            nombre_mapa = self.my_map + ".json"
+            ruta_json = maps_path / nombre_mapa
+
+            try:
+                with open(ruta_json, "r", encoding="utf-8") as archivo:
+                    datos = json.load(archivo)
+
+                musica = datos.get("music")
+                if musica:
+                    ruta_musica = path_padre / 'resources' / 'sounds' / musica
+                    self.musica = arcade.load_sound(ruta_musica)
+                    self.musica_player = self.musica.play(loop=True)
+            except Exception as e:
+                print(f"Error al cargar música del mapa {nombre_mapa}: {e}")
