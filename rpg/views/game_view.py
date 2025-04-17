@@ -196,13 +196,10 @@ class GameView(arcade.View):
         :param start_x: Grid x location to spawn at
         :param start_y: Grid y location to spawn at
         """
-        if self.cur_map_name:
-            self.last_map_name = self.cur_map_name
+        self.last_map_name = self.cur_map_name
         self.cur_map_name = map_name
 
-        print(f"Nombre del mapa actual (en switch_map): {self.cur_map_name}, tipo: {type(self.cur_map_name)}")
-        if self.cur_map_name:
-            self.last_map_name = self.cur_map_name
+        print(f"Cambiando de '{self.last_map_name}' a '{self.cur_map_name}'")
 
         try:
             self.my_map = self.map_list[self.cur_map_name]
@@ -228,7 +225,6 @@ class GameView(arcade.View):
         if self.my_map.light_layer:
             self.my_map.light_layer.resize(self.window.width, self.window.height)
 
-        # ¡Llamamos a play_music() aquí, al final de switch_map()!
         self.play_music()
 
 
@@ -653,14 +649,29 @@ class GameView(arcade.View):
         elif key in constants.KEY_RIGHT:
             self.right_pressed = False
 
-    def on_mouse_motion(self, x, y, delta_x, delta_y):
-        """Called whenever the mouse moves."""
+    def _on_mouse_motion(self, x, y, dx, dy):
+        """User moves mouse"""
         pass
+        # Convert back to map coordinates that make sense for the Tiled map
+        map_coordinates = self.get_map_coords(x, y)
+        # self.player = self.scene.get_sprite_at_pixel(x, y, sprite_lists=["player"]) # <-- Elimina o comenta esta línea
+        # if self.player:
+        #     print(f"Mouse at {map_coordinates.x}, {map_coordinates.y} over player at {self.player.center_x // 32}, {self.player.center_y // 32}")
 
-    def on_mouse_press(self, x, y, button, key_modifiers):
+    def on_mouse_press(self, x, y, button, modifiers):
         """Called when the user presses a mouse button."""
-        if button == arcade.MOUSE_BUTTON_RIGHT:
-            self.player_sprite.destination_point = x, y
+
+        map_coordinates = self.get_map_coords(x, y)
+
+        if button == arcade.MOUSE_BUTTON_LEFT:
+            self.move_player = True
+            self.move_target = map_coordinates
+
+        item = self.scene.get_sprite_at_pixel(x, y, ["characters"])
+        if item is not None:
+            # self.player = item  <-- Elimina o comenta esta línea
+            self.player_sprite = item
+            print(f"Player clicked at {self.player_sprite.position}")
 
     def on_mouse_release(self, x, y, button, key_modifiers):
         """Called when a user releases a mouse button."""
@@ -687,10 +698,10 @@ class GameView(arcade.View):
             print(f"Mapa actual (en play_music): {self.cur_map_name}, tipo: {type(self.cur_map_name)}")
             # Detener música anterior
             if hasattr(self, 'musica_player') and self.musica_player:
-                self.musica_player.stop()
+                print(f"Tipo de self.musica_player antes de detener: {type(self.musica_player)}")
+                self.musica_player.pause()
                 self.musica_player = None  # Limpiar el reproductor anterior
 
-            self.last_map_name = self.my_map  # ¡Importante actualizar last_map_name AQUÍ!
             nombre_mapa = self.cur_map_name + ".json"
             ruta_json = maps_path / nombre_mapa
 
@@ -701,12 +712,14 @@ class GameView(arcade.View):
                 musica = datos.get("music")
                 if musica:
                     ruta_musica = path_padre / 'resources' / 'sounds' / musica
-                    print(f"Intentando cargar música desde: {ruta_musica}")
+                    print(f"Intentando cargar música desde: {ruta_musica}") # Línea de prueba
                     self.musica = arcade.load_sound(ruta_musica)
-                    print(f"Objeto de música cargado: {self.musica}")
-                    print(f"Cargando música: {ruta_musica}")
+                    print(f"Objeto de música cargado: {self.musica}") # Línea de prueba
                     self.musica_player = self.musica.play(loop=True)
                     print(f"Reproduciendo música para: {self.cur_map_name}")
-                    print(f"Último mapa: {self.last_map_name}, Mapa actual: {self.cur_map_name}")
             except Exception as e:
                 print(f"Error al cargar música del mapa {nombre_mapa}: {e}")
+        else:
+            print("Los nombres de los mapas son iguales, no se carga nueva música.")
+
+
