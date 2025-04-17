@@ -649,33 +649,18 @@ class GameView(arcade.View):
         elif key in constants.KEY_RIGHT:
             self.right_pressed = False
 
-    def _on_mouse_motion(self, x, y, dx, dy):
-        """User moves mouse"""
-        pass
-        # Convert back to map coordinates that make sense for the Tiled map
-        map_coordinates = self.get_map_coords(x, y)
-        # self.player = self.scene.get_sprite_at_pixel(x, y, sprite_lists=["player"]) # <-- Elimina o comenta esta línea
-        # if self.player:
-        #     print(f"Mouse at {map_coordinates.x}, {map_coordinates.y} over player at {self.player.center_x // 32}, {self.player.center_y // 32}")
+        def on_mouse_motion(self, x, y, delta_x, delta_y):
+            """Called whenever the mouse moves."""
+            pass
 
-    def on_mouse_press(self, x, y, button, modifiers):
-        """Called when the user presses a mouse button."""
+        def on_mouse_press(self, x, y, button, key_modifiers):
+            """Called when the user presses a mouse button."""
+            if button == arcade.MOUSE_BUTTON_RIGHT:
+                self.player_sprite.destination_point = x, y
 
-        map_coordinates = self.get_map_coords(x, y)
-
-        if button == arcade.MOUSE_BUTTON_LEFT:
-            self.move_player = True
-            self.move_target = map_coordinates
-
-        item = self.scene.get_sprite_at_pixel(x, y, ["characters"])
-        if item is not None:
-            # self.player = item  <-- Elimina o comenta esta línea
-            self.player_sprite = item
-            print(f"Player clicked at {self.player_sprite.position}")
-
-    def on_mouse_release(self, x, y, button, key_modifiers):
-        """Called when a user releases a mouse button."""
-        pass
+        def on_mouse_release(self, x, y, button, key_modifiers):
+            """Called when a user releases a mouse button."""
+            pass
 
     def on_resize(self, width, height):
         """

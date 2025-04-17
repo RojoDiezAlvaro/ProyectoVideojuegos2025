@@ -1,6 +1,7 @@
 { "backgroundcolor":"#000000",
  "compressionlevel":-1,
  "height":100,
+  "music":"Dungeon1.wav",
  "infinite":false,
  "layers":[
         {

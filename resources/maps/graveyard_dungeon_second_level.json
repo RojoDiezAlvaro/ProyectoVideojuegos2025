@@ -1,6 +1,7 @@
 { "backgroundcolor":"#000000",
  "compressionlevel":-1,
  "height":20,
+ "music":"MusicaCombate.wav",
  "infinite":false,
  "layers":[
         {
