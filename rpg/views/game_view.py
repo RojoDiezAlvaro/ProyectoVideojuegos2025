@@ -84,6 +84,8 @@ class DebugMenu(arcade.gui.UIBorder, arcade.gui.UIWindowLikeMixin):
         # x and y don't seem to actually change where this is created. bug?
         # TODO: make this not appear at the complete bottom left (top left would be better?)
         super().__init__(border_width=5, child=group)
+        self.last_map_name = None  # Inicializar last_map_name
+        self.musica_player = None  # Asegurarse de que no haya música reproduciéndose al inicio
 
     def setup_noclip(self, callback: Callable):
         # disable player collision
@@ -194,7 +196,13 @@ class GameView(arcade.View):
         :param start_x: Grid x location to spawn at
         :param start_y: Grid y location to spawn at
         """
+        if self.cur_map_name:
+            self.last_map_name = self.cur_map_name
         self.cur_map_name = map_name
+
+        print(f"Nombre del mapa actual (en switch_map): {self.cur_map_name}, tipo: {type(self.cur_map_name)}")
+        if self.cur_map_name:
+            self.last_map_name = self.cur_map_name
 
         try:
             self.my_map = self.map_list[self.cur_map_name]
@@ -220,10 +228,8 @@ class GameView(arcade.View):
         if self.my_map.light_layer:
             self.my_map.light_layer.resize(self.window.width, self.window.height)
 
-        try:
-            self.play_music()
-        except AttributeError:
-            pass
+        # ¡Llamamos a play_music() aquí, al final de switch_map()!
+        self.play_music()
 
 
     def setup_physics(self):
@@ -544,6 +550,7 @@ class GameView(arcade.View):
 
                 # Swap to the new map
                 self.switch_map(map_name, start_x, start_y)
+                self.play_music()
             else:
                 # We didn't hit a door, scroll normally
                 self.scroll_to_player()
@@ -675,17 +682,16 @@ class GameView(arcade.View):
         path_padre = current_path.parent
         maps_path = path_padre / 'resources' / 'maps'
 
-        def stop_music(self):
-            if hasattr(self, "musica_player") and self.musica_player:
-                self.musica_player.stop()
-                self.musica_player = None
-
-        if self.last_map_name != self.my_map:
+        if self.last_map_name != self.cur_map_name:
+            print(f"Último mapa (en play_music): {self.last_map_name}, tipo: {type(self.last_map_name)}")
+            print(f"Mapa actual (en play_music): {self.cur_map_name}, tipo: {type(self.cur_map_name)}")
             # Detener música anterior
-            stop_music(self)
+            if hasattr(self, 'musica_player') and self.musica_player:
+                self.musica_player.stop()
+                self.musica_player = None  # Limpiar el reproductor anterior
 
-            self.last_map_name = self.my_map
-            nombre_mapa = self.my_map + ".json"
+            self.last_map_name = self.my_map  # ¡Importante actualizar last_map_name AQUÍ!
+            nombre_mapa = self.cur_map_name + ".json"
             ruta_json = maps_path / nombre_mapa
 
             try:
@@ -695,7 +701,12 @@ class GameView(arcade.View):
                 musica = datos.get("music")
                 if musica:
                     ruta_musica = path_padre / 'resources' / 'sounds' / musica
+                    print(f"Intentando cargar música desde: {ruta_musica}")
                     self.musica = arcade.load_sound(ruta_musica)
+                    print(f"Objeto de música cargado: {self.musica}")
+                    print(f"Cargando música: {ruta_musica}")
                     self.musica_player = self.musica.play(loop=True)
+                    print(f"Reproduciendo música para: {self.cur_map_name}")
+                    print(f"Último mapa: {self.last_map_name}, Mapa actual: {self.cur_map_name}")
             except Exception as e:
                 print(f"Error al cargar música del mapa {nombre_mapa}: {e}")
