@@ -1,7 +1,7 @@
 { "backgroundcolor":"#000000",
  "compressionlevel":-1,
  "height":100,
-  "music":"MusicaCueva.wav" ,
+ "music":"MusicaCueva.wav",
  "infinite":false,
  "layers":[
         {
@@ -1154,7 +1154,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJzt3DEKwjAUANAWXdRJndTB06hH8cZubrrpHXSSIEhFa\/Nt3oNspfzmN\/lpCakqIjsOckdA6tqQj1Mh+Tq\/eM5Nt2E0uhSSj6b3Mrr1MHcElGj\/5+OmLyKuc96p5W3X+227t\/tYxHryqpYfBs3X0E9RxkuJ9H2Z5P3\/fPNdLt\/t0p9E4b9Lt0Z1VY2TNqlzR1S26b3\/Z0mby0dWi3v\/L5O2kg8Iy1r293a5A+DBerk\/nueuNLfmNQAAAIA4Iu4dLlnEvcMAAAAAAAAAAAAAAAAAAAAAAADE5CyxWJwlBgAAAAAA3bsByzoUzg==",
+         "data":"eJzt3EEOwUAUANAKG6ywwsJpcAxLp7Zjxx00kUhJpEJ1fs17yaS75nd+Z\/60mUxRENGuf7se+mnj4NGlJh\/HTPJ1evGc63bDqHXOJB9172V0q0HqCMjRvuPj5l9EXOe8U8ubrvebZm\/3sYj15J1anku95ybKeMmRvs+TvHfPN9\/l8t0s\/UkU\/ru0a9grilGljXupI8rbpOz\/aaXN5COpedn\/i0pbygeEZS37e9vUAXBnvfw\/nueuam7NawAAAABxRNw7nLOIe4cBAAAAAAAAAAAAAAAAAAAAAACIyVlisThLDAAAAAAA2ncFW8wUVw==",
          "encoding":"base64",
          "height":100,
          "id":5,
@@ -1196,7 +1196,7 @@
         {
          "name":"ambient_color",
          "type":"color",
-         "value":"#ffffffff"
+         "value":"#ff2b2b2b"
         }],
  "renderorder":"right-down",
  "tiledversion":"1.11.2",
