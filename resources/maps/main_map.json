@@ -1,7 +1,6 @@
 { "backgroundcolor":"#5f8702",
  "compressionlevel":-1,
  "height":64,
- "music": "MúsicaOasis.wav",
  "infinite":false,
  "layers":[
         {
@@ -416,7 +415,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "x":0,
          "y":0
         }],
@@ -424,7 +423,7 @@
  "nextobjectid":12,
  "orientation":"orthogonal",
  "renderorder":"left-up",
- "tiledversion":"1.8.4",
+ "tiledversion":"1.11.2",
  "tileheight":32,
  "tilesets":[
         {
@@ -441,6 +440,6 @@
         }],
  "tilewidth":32,
  "type":"map",
- "version":"1.8",
+ "version":"1.10",
  "width":64
 }

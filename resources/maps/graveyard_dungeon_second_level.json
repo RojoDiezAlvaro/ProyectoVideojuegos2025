@@ -1,7 +1,7 @@
 { "backgroundcolor":"#000000",
  "compressionlevel":-1,
  "height":20,
- "music":"MusicaCombate.wav",
+"music":"MusicaCombate.wav",
  "infinite":false,
  "layers":[
         {
@@ -20,7 +20,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJztlkEKwjAQRRPc9QhuPZx36b6brvVAUkVarV7FDDI4HYImw6SxJR+GNmnnTx98aDpjTJ+grl+enU28OsE3wJyTYJZPOztdo+9h89nDe8lMaY8Wn88bVBO+esF8mB\/MHvq2hK9dMB\/6DGzdEL5mBXx8vZZ8cp+beWeV5xNyfFfwD+1JxYd7R8IH99J5\/8a3dywPd72QvdHVU8k\/tEeLD\/LI\/6++HGJuY5WbL3buXD2FT1+FT68nB9\/w+xWVnlx8oMrGlUQ5+eZQ4UunrY0riYDNd+5IXfTMFqpRMAfOTy8rqqEd",
+         "data":"eJztlsEKwjAMhlu8+QhefTifxuNuO\/pCMkWcbr6KDRKMo9YmJKuD\/hBsu\/3JPvjBds65q0FdEs9Ojq9O8A0w5yiYFdPWf+5TfSUzpR4tvlhv0H71PsP1EvkwP5g97NsQvmbBfNinn+xT70r6cz3afN\/2uc+0PVZ8N\/fKakvyCWvI8V2hf67Hig\/PDoQP1tJ5\/8a3Cyxj+D2TsyHUQ6l\/rkeLD\/I4\/X+N5RBzy1VpPu7cuTyVT1+VT89Tgq\/\/\/YqKpxQfaO15JVFJvjlU+ey08bySCNhi9w7rone2XA2COXB\/egK2DJ2D",
          "encoding":"base64",
          "height":20,
          "id":2,
@@ -296,7 +296,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJzt1ysOgEAMBNA2VYACFHAtgiLcCIkDB\/ekydoKVvDZMi9pMnJGluheqxD1TDRwyN7sumnUbROHDGmZxc5eLGJnSMMmdvbiEDsDAAD8Taa\/RB55Bb\/d+rpSu1aRV2PfZzTatY28LqF9TzoB2VgM\/Q==",
+         "data":"eJzt17ENwCAMRFFThlSECrIWokLsPwZewQUkoP+kq31XWmS+4kSqW3DoI0239YP3AQAAAJjn0l\/CG3Nv9H8E7foYE9n3G0m7ZmPejfatNADArAWR",
          "encoding":"base64",
          "height":20,
          "id":4,
@@ -315,7 +315,7 @@
          "objects":[],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "x":0,
          "y":0
         }],
@@ -329,7 +329,7 @@
          "value":"#ff000000"
         }],
  "renderorder":"right-down",
- "tiledversion":"1.8.4",
+ "tiledversion":"1.11.2",
  "tileheight":32,
  "tilesets":[
         {
@@ -342,6 +342,6 @@
         }],
  "tilewidth":32,
  "type":"map",
- "version":"1.8",
+ "version":"1.10",
  "width":56
 }

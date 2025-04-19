@@ -1,7 +1,6 @@
 { "backgroundcolor":"#000000",
  "compressionlevel":-1,
  "height":100,
- "music":"MusicaCueva.wav",
  "infinite":false,
  "layers":[
         {
@@ -1190,7 +1189,7 @@
          "y":0
         }],
  "nextlayerid":8,
- "nextobjectid":145,
+ "nextobjectid":146,
  "orientation":"orthogonal",
  "properties":[
         {
