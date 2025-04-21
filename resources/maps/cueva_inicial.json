@@ -1,5 +1,6 @@
 { "backgroundcolor":"#000000",
  "compressionlevel":-1,
+  "music":"MusicaCueva.wav",
  "height":100,
  "infinite":false,
  "layers":[
@@ -1139,7 +1140,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJzt2c9LHDEUwPGR\/d+89h+zN3uzN3trb\/UfsNKCeJEtiGzx2Ivi0aM4DwyEkB\/vZZLNyH4\/EHaZzWaSvEySmdlO03Q3p3sv\/Z2W2wZl1pSfKyMsbzu1q\/tID3P6FxzbTeX2l9zO6decfs\/pj\/d59f6bhuQ7VuaT9LLRl51TGgc9Yy71\/7yx\/0eT5zJy\/Hoqx9ulcJyk7N7zvm7iZVv7r9S+FjHPlf1lYTxi40n653p59RaT60sbf+046BkPTV3D8RXWp2f9HOnXbaQuI+yjvTkSM78flsRD5jDtOh0bt6nx4\/Yk+4jX6HgIvw5hn4TXt7\/XCdcQy\/ph3T+4z3APYI1\/6Xxri4c2b2pN73Ful0f2i7X7Au35Dj0e4fUUG78uj7XvNedbGt8eLHOMq28sHtr1IzdnrGF8fkSxeNxMtvknxrr+tFqjPjrpU\/8exF0Xmuvd7\/PRe6ba\/eDa4l3aJ1vK6d2mVN0kFr3XpH3G6jbxvUbLeap0j9uqzjFPXnrsdI4USzxazAvasae9p\/WP19YvN\/5HxiOcv4Tfxtb7yJPM896aePSYb\/8vKLfGyL3pqSEesbES5msx34bneG5QrsXoewXLulA61qItUoZbO8TI+arE8vz2zHtH8DXzvsASj9j4bR0Pf+4asZ6Xnj3ugt+kbieK9zHnXp5vFfFIzU+5PXrLfgvbvVbS5lPl+7Hvc74fhby5PrSu4aPn3hEs934\/51hcLIhH6hlAauweYjycUtv9NeOsYr6qyUc80vw145x4dNeq7dpyNM9i1rzu9qbdZ6W4\/x7ymG7Jss+Kkf+2ejaLNs9yiQUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYC0+HY2uAVp6Aw8D08o=",
+         "data":"eJzt3M9rFDEUwPGR\/d+8+o\/VW73VW73pTf8BWyoUL2UFkRWPXpQee5ROoIEQ8uO95GUzdb8fCC2z2UySl0kyM7T7ZVm+r+lHkL4t\/fZRmS3ll8qIy9svdnWf6deafkbHDku9\/TV3a7pa082avgQ\/r58+k3D5XgrzufSwk5ddUhsHI2Pu6v96p\/+OJM\/nxPHbpR5vn+JxknN4yvtvly5b23+19lnEvFT2m854pMaT65\/b\/up1c9eXNP7ScTAyHpK6xuMrrs\/I+nmuX\/eJusxwjPaWuJiF\/dATDzeHSdfp1LjNjR+\/JzlGvGbHwwnrEPdJfH2He514DdGsH9r9g\/8Z7wG08a+db2vxkObNrekjzu3zuP1i675Aer5Tj0d8PaXGr8+j7XvJ+XrjO4JmjvH1TcVDun6U5owtjM\/nKBWPr4tu\/knRrj9Wa9Rz5\/o0vAfx14Xkeg\/7fPaeqXU\/uLV41\/bJmnJGtylXNxeL0WvSMWN1l\/m9heU8VbvHtapzyt8g\/Rl0jhxNPCzmBenYk97Thsdb61ca\/zPjEc9fTthG633kWeF5b0s8Rsy3vzvKbTFzb3quiEdqrMT5LObb+Bz3BuVqzL5X0KwLtWMWbXFl+LXDmTlf1Wie314E7wjeFt4XaOKRGr\/W8Qjnrhnree3Z4yH6zNXtTPA+5jLI864hHrn5qbRHt+y3uN1b5dp8Lnw\/9n7N96GSt9SH2jV89tw7g+be7+Mai08d8cg9A8iN3VOMh1dre7hmXDTMVy35iEdeuGZcEo\/hrNouLUfyLGbL6+5o0n1Wjv\/uKY9pS5p9Vor7rtWzWdg8yyUWAAAAAAAAAAAAAAAAAAAAAAAAbXr+pgP431n8HyUAAAAAAAAAAAAAAAAAAAAAAAAAAACcplcvZtcAlh4Bn4Lu6g==",
          "encoding":"base64",
          "height":100,
          "id":2,
@@ -1189,7 +1190,7 @@
          "y":0
         }],
  "nextlayerid":8,
- "nextobjectid":146,
+ "nextobjectid":147,
  "orientation":"orthogonal",
  "properties":[
         {
