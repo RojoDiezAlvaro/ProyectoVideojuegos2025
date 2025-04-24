@@ -1,6 +1,5 @@
 { "backgroundcolor":"#000000",
  "compressionlevel":-1,
-  "music":"MusicaCueva.wav",
  "height":100,
  "infinite":false,
  "layers":[
@@ -1182,6 +1181,18 @@
                  "width":32,
                  "x":2431.75,
                  "y":192.25
+                }, 
+                {
+                 "gid":1028,
+                 "height":32,
+                 "id":147,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":832,
+                 "y":192
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1190,7 +1201,7 @@
          "y":0
         }],
  "nextlayerid":8,
- "nextobjectid":147,
+ "nextobjectid":148,
  "orientation":"orthogonal",
  "properties":[
         {
