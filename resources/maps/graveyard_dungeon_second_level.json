@@ -1,7 +1,6 @@
 { "backgroundcolor":"#000000",
  "compressionlevel":-1,
  "height":20,
-"music":"MusicaCombate.wav",
  "infinite":false,
  "layers":[
         {
@@ -269,17 +268,17 @@
                         {
                          "name":"map_name",
                          "type":"string",
-                         "value":"dungeon_lvl_three_maze"
+                         "value":"cueva_inicial"
                         }, 
                         {
                          "name":"start_x",
                          "type":"int",
-                         "value":2
+                         "value":50
                         }, 
                         {
                          "name":"start_y",
                          "type":"int",
-                         "value":2
+                         "value":20
                         }],
                  "rotation":0,
                  "type":"",
@@ -320,7 +319,7 @@
          "y":0
         }],
  "nextlayerid":8,
- "nextobjectid":21,
+ "nextobjectid":29,
  "orientation":"orthogonal",
  "properties":[
         {
