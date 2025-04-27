@@ -554,8 +554,7 @@ class GameView(arcade.View):
             # No doors, scroll normally
             self.scroll_to_player()
 
-        if PlayerSprite.noclip():
-            #para el modo fantasma
+        if PlayerSprite.is_ghost(PlayerSprite):
             self.noclip_status = True
             self.setup_physics()
         else:

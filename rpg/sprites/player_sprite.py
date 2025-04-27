@@ -1,19 +1,16 @@
 import arcade
-from resources.characters.MainCharacterAndCorpse import PlaterNotFinal.png
-from resources.characters.MainCharacterAndCorpse import Fantasma.png
-from resources.characters.MainCharacterAndCorpse import CorpseNotFinal.png
-
-
 
 from rpg.sprites.character_sprite import CharacterSprite
+
+
 class PlayerSprite(CharacterSprite):
     def __init__(self, sheet_name):
         super().__init__(sheet_name)
-        self.player_sprite = arcade.Sprite("PlayerNotFinal.png")
+        self.player_sprite = arcade.Sprite("../resources/characters/MainCharacterAndCorpse/PlayerNotFinal.png")
         self.sound_update = 0
         self.footstep_sound = arcade.load_sound(":sounds:footstep00.wav")
         #aún hay que añadir el sprite del cadaver
-        self.corpse_sprite = arcade.Sprite("CorpseNotFinal.png")
+        self.corpse_sprite = arcade.Sprite("../resources/characters/MainCharacterAndCorpse/CorpseNotFinal.png")
         self.corpse_exists = False
         self.is_ghost = False
 
@@ -38,14 +35,15 @@ class PlayerSprite(CharacterSprite):
 
         # Revisión de interacción con cadáver
         if self.is_ghost:
+            self.player_sprite = arcade.Sprite("../resources/characters/MainCharacterAndCorpse/Fantasma.png")
             self.interact_with_corpse()
 
 
 
+
     #codigo añadido sin probar(exluyendo las declaraciones en el innit)---------------------------------------------
-    def noclip(self):
-        if self.is_ghost:
-            return True
+    def is_ghost(self):
+        return self.is_ghost
 
 
     def player_death(self):
@@ -57,7 +55,7 @@ class PlayerSprite(CharacterSprite):
 
     def spawn_corpse_at(self, x, y):
         # Crear sprite del cadáver
-        self.corpse_sprite = arcade.Sprite("CorpseNotFinal.png", center_x=x, center_y=y)
+        self.corpse_sprite = arcade.Sprite("../resources/characters/MainCharacterAndCorpse/CorpseNotFinal.png", center_x=x, center_y=y)
 
         # Hacer que sea visible e interactuable (si lo necesitas)
         self.corpse_sprite.visible = True
@@ -74,16 +72,6 @@ class PlayerSprite(CharacterSprite):
 
                 # Restaurar jugador a estado normal
                 self.is_ghost = False
-                self.player_sprite = arcade.Sprite("PlayerNotFinal.png")
+                self.player_sprite = arcade.Sprite("../resources/characters/MainCharacterAndCorpse/PlayerNotFinal.png.png")
                 self.player_sprite.can_collide = True
-
-
-    def update(self, delta_time):
-        if self.corpse_sprite:
-            self.corpse_sprite.update()
-
-        # Revisión de interacción con cadáver
-        if self.is_ghost:
-            self.interact_with_corpse()
-
 
