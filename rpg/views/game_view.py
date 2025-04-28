@@ -200,7 +200,6 @@ class GameView(arcade.View):
         self.cur_map_name = map_name
 
         print(f"Cambiando de '{self.last_map_name}' a '{self.cur_map_name}'")
-
         try:
             self.my_map = self.map_list[self.cur_map_name]
         except KeyError:
@@ -400,6 +399,7 @@ class GameView(arcade.View):
         # draw GUI
         self.ui_manager.draw()
 
+
     def scroll_to_player(self, speed=constants.CAMERA_SPEED):
         """Manage Scrolling"""
 
@@ -553,6 +553,13 @@ class GameView(arcade.View):
         else:
             # No doors, scroll normally
             self.scroll_to_player()
+
+        if PlayerSprite.is_ghost(PlayerSprite):
+            self.noclip_status = True
+            self.setup_physics()
+        else:
+            self.noclip_status = False
+            self.setup_physics()
 
     def on_key_press(self, key, modifiers):
         """Called whenever a key is pressed."""
