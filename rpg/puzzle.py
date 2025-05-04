@@ -3,7 +3,8 @@ import random
 from PIL import Image
 
 # Ruta de la imagen
-IMAGE_PATH = "C:/Users/W0lfscreed/Downloads/foto.jpg"
+IMAGE_PATH = "../resources/maps/foto.jpg"
+
 
 # Configuración del puzzle
 NUM_COLS = 6
