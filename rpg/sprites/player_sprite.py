@@ -1,5 +1,6 @@
 import arcade
 
+from rpg.constants import STARTING_Y, STARTING_X
 from rpg.sprites.character_sprite import CharacterSprite
 
 
@@ -13,6 +14,10 @@ class PlayerSprite(CharacterSprite):
         self.corpse_sprite = arcade.Sprite("../resources/characters/MainCharacterAndCorpse/CorpseNotFinal.png")
         self.corpse_exists = False
         self.is_ghost = False
+        self.starter_checkpoint_x = STARTING_X
+        self.starter_checkpoint_y = STARTING_Y
+        self.last_checkpoint_x = None
+        self.last_checkpoint_y = None
 
     def on_update(self, delta_time):
         super().on_update(delta_time)
@@ -37,19 +42,26 @@ class PlayerSprite(CharacterSprite):
         if self.is_ghost:
             self.player_sprite = arcade.Sprite("../resources/characters/MainCharacterAndCorpse/Fantasma.png")
             self.interact_with_corpse()
+            # codigo añadido sin probar(exluyendo las declaraciones en el innit)---------------------------------------------
 
+    #sistema de checkpoints
+    def return_to_checkpoint(self):
+        if self.last_checkpoint_x is not None and self.last_checkpoint_y is not None:
+            self.player_sprite.center_x = self.last_checkpoint_x
+            self.player_sprite.center_y = self.last_checkpoint_y
+        else:
+            self.player_sprite.center_x = self.starter_checkpoint_x
+            self.player_sprite.center_y = self.starter_checkpoint_y
 
-
-
-    #codigo añadido sin probar(exluyendo las declaraciones en el innit)---------------------------------------------
+    #codigo añadido sin probar(exluyendo las declaraciones en el innit)-----------------------
+    #código relacionado a la muerte y el "modo fantasma"
     def is_ghost(self):
         return self.is_ghost
 
 
     def player_death(self):
         self.spawn_corpse_at(self.player_sprite.center_x, self.player_sprite.center_y)
-        #self.player_sprite.center_x = self.last_checkpoint_x
-        #self.player_sprite.center_y = self.last_checkpoint_y
+        self.return_to_checkpoint()
         self.is_ghost = True
         self.player_sprite = arcade.Sprite("Fantasma.png")
 
@@ -74,4 +86,3 @@ class PlayerSprite(CharacterSprite):
                 self.is_ghost = False
                 self.player_sprite = arcade.Sprite("../resources/characters/MainCharacterAndCorpse/PlayerNotFinal.png.png")
                 self.player_sprite.can_collide = True
-

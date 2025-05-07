@@ -199,6 +199,10 @@ class GameView(arcade.View):
         self.last_map_name = self.cur_map_name
         self.cur_map_name = map_name
 
+        #sistema checkpoints
+        PlayerSprite.starter_checkpoint_x = start_x
+        PlayerSprite.starter_checkpoint_y = start_y
+
         print(f"Cambiando de '{self.last_map_name}' a '{self.cur_map_name}'")
         try:
             self.my_map = self.map_list[self.cur_map_name]
