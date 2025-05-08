@@ -120,6 +120,7 @@ class PuzzleGame(arcade.Window):
         return all(tile.is_in_correct_position() for tile in self.tiles)
 
 
+
 def main():
     game = PuzzleGame()
     game.setup()
