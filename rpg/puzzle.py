@@ -74,8 +74,9 @@ class PuzzleGame(arcade.Window):
             if tile == self.selected_tile:
                 arcade.draw_rectangle_outline(x, y, TILE_WIDTH, TILE_HEIGHT, arcade.color.RED, 3)
 
-        # Mostrar pantalla de victoria
+
         if self.solved:
+            #una vez resuelto el puzzle, dirigir a mapa de momento solo se dibuja un mensaje
             arcade.draw_text(
                 "¡Puzzle resuelto!",
                 SCREEN_WIDTH // 2,
