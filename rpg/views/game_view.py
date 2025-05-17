@@ -199,6 +199,7 @@ class GameView(arcade.View):
         """
         self.last_map_name = self.cur_map_name
         self.cur_map_name = map_name
+        self.player_sprite.current_map_name = map_name
 
         #sistema checkpoints
         PlayerSprite.starter_checkpoint_x = start_x
@@ -626,6 +627,7 @@ class GameView(arcade.View):
 
     def search(self):
         """Search for things"""
+        #también se usará para los checkpoints, para ahorrar código y tiempo
         map_layers = self.map_list[self.cur_map_name].map_layers
         if "searchable" not in map_layers:
             print(f"No searchable sprites on {self.cur_map_name} map layer.")
@@ -644,6 +646,10 @@ class GameView(arcade.View):
                 sprite.remove_from_sprite_lists()
                 lookup_item = self.item_dictionary[sprite.properties["item"]]
                 self.player_sprite.inventory.append(lookup_item)
+            elif "checkpoint" in sprite.properties:
+                self.player_sprite.last_checkpoint_map = self.cur_map_name
+                self.player_sprite.last_checkpoint_x = self.player_sprite.center_x
+                self.player_sprite.last_checkpoint_y = self.player_sprite.center_y
             else:
                 print(
                     "The 'item' property was not set for the sprite. Can't get any items from this."

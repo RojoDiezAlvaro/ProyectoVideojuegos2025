@@ -1151,7 +1151,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJzt2c1qGzEQwPEFv1ufLr2lt+Tm3tpb+wJJSMDkElwoxaXHXhJyzDFkByIQQh8zWsna4P8PhM1a1koaraTd3U\/T9HtOf7z0a1puH5RZU36ujLC8\/dSu7iP9m9Pf4NhhKre\/5GFO13O6ndOd93nz\/puG5PukzCfpZaMvO6c0DnrGXOr\/eWP\/jybPVeT4birH26VwnKQc3vO+buJlW\/uv1L4WMc+V\/WVhPGLjSfpnt7x6i8n1pY2\/dhz0jIemruH4CuvTs36O9Os+UpcRjtHeHImZ3w9L4iFzmHadjo3b1Phxe5JjxGt0PIRfh7BPwuvb3+uEa4hl\/bDuH9xnuAewxr90vrXFQ5s3tab3OLfLI\/vF2n2B9nynHo\/weoqNX5fH2vea8y2Nbw+WOcbVNxYP7fqRmzPWMD4\/olg87ifb\/BNjXX9arVEfnfSpfw\/irgvN9e73+eg9U+1+cG3xLu2TLeX0blOqbhKL3mvSMWP1kPheo+U8VbrHbVXnmCcvPXY6R4olHi3mBe3Y097T+sdr65cb\/yPjEc5fwm9j633kWeZ5b008esy3\/xeUW2Pk3vTcEI\/YWAnztZhvw3M8NyjXYvS9gmVdKB1r0RYpw60dYuR8VWJ5fnvhvSO4zLwvsMQjNn5bx8Ofu0as56Vnj4fgN6nbmeJ9zNbL87UiHqn5KbdHb9lvYbvXStp8rnw\/9m3O972QN9eH1jV89Nw7guXe78cci58L4pF6BpAau6cYD6fUdn\/NuKiYr2ryEY80f83YEo\/uWrVdW47mWcya193etPusFPffUx7TLVn2WTHy31bPZtHmWS6xAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPbwBffXTeg==",
+         "data":"eJzt2b1KBDEQwPHAvZtPp512Z6eddvoCKgpiIyeInFjaKJaW4gUMhJCPmWxyWbn\/D5aTM5dNMtlMdndljHkJjicz3SpSr7b+XB1hfSvTru0jPUa+W5ty\/yX1Xm+O281x533eJM6ZqmNPWM4e3wt53TmledAz5rb9Bwv9byRlriLf35tyvN3xKmzP+q\/szyJet3b8Sv1rEfNc3UcT4xGbT3Z87qc3bzJ7fUnjL50HPeMhaWs4v8L29GyfY8d1FWnLCNvob46NmT8OU+Jh1zBpno7N29T8eTbby+ej42H5bQjHJLy+\/b1OmEM0+UO7f3Cf4R5AG\/\/S+eYWD2nZVE7vcW5X5s3U7wuk59v1eITXU2z+ujLasZecb2p8e9CsMa69sXhI80duzZjD\/PyPYvF4MLr1J0abf1rlqP\/Ojql\/D+KuC8n17o\/56D1T7X5wbvEu7ZM19fTuU6ptNha9c9I2Y\/WY+LtGy3WqdI\/bqs0xn97x0ekcKZp4tFgXpHNPek\/rf1\/bvtz8HxmPcP2y\/D623kfuZ5731sSjx3r7PqHeGiP3poeKeMTmSliuxXobnuOrQb0ao+8VNHmh9F2Lvtg6XO6wRq5XJZrnt0vvHcFx5n2BJh6x+ds6Hv7aNSKfl549roP\/2bbtC97HnHhlTivikVqfcnv0luMW9nuubJ8Phe\/Hzjblzgtlc2OozeGj194RNPd+F5tYXE6IR+oZQGru7mI8nFLf\/ZyxrFivasoRjzQ\/Z5wQj+5a9V1aj+RZzJzzbm\/SfVaK++0uz+mWNPusGPvbVs9m0eZZLrEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9\/ALnedKT",
          "encoding":"base64",
          "height":100,
          "id":2,
@@ -1165,7 +1165,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJzt2DEOgjAUBmAILuqkTurgadRjOHpqN930DpqYGDQxEEFa6PclDRt59Kd9hSwjRofieT0VYevg3a0ij3MieV2+POe22zIqXRPJo+q9jN1mFLoCUnTs+boZihjPOXV6edv9ftfu7X4WYz+p08tT6fc8xbJeUmTu0yT3\/mnyXS7vdplPYuG\/S7fGeZZNSmOah64obbPH\/M9LYyGPoJaP+V+VxloeEC1n2f\/bhy6AF+fl4fjcu8rZ2tcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGjiDqTLELc=",
+         "data":"eJzt2DEOgjAUBmCILuqkTurgadSjeGo33fQOkpiYxsRABGmh35d0JY\/3U16hKEjZZRK7AkKPmjyumeR1+3Kfh37LqHXPJI+65zJ1+2nsCsjReeD7ZixSPOc0meVdz\/tjt5f7WYrzpMksz2Xe85LKfsmR3udJ7sPT5rtc3t3ST1Lhv0u\/ZmVRzIO1KGNXlLdl1f9VsNbyiGpT9X8brJ08IFnOsv93il0Ab87L4\/H57gqz9V4DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKCNJ20JEFU=",
          "encoding":"base64",
          "height":100,
          "id":5,
@@ -1190,6 +1190,29 @@
         }, 
         {
          "draworder":"topdown",
+         "id":9,
+         "name":"emptied",
+         "objects":[
+                {
+                 "gid":871,
+                 "height":32,
+                 "id":171,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":64,
+                 "y":64.5
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
          "id":7,
          "name":"serchable",
          "objects":[
@@ -1204,6 +1227,24 @@
                  "width":32,
                  "x":2431.75,
                  "y":192.25
+                }, 
+                {
+                 "gid":863,
+                 "height":32,
+                 "id":172,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"item",
+                         "type":"string",
+                         "value":"Dagger"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":63.5,
+                 "y":63
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1211,8 +1252,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":9,
- "nextobjectid":165,
+ "nextlayerid":10,
+ "nextobjectid":173,
  "orientation":"orthogonal",
  "properties":[
         {

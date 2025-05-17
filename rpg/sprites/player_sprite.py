@@ -17,6 +17,8 @@ class PlayerSprite(CharacterSprite):
         self.starter_checkpoint_y = STARTING_Y
         self.last_checkpoint_x = None
         self.last_checkpoint_y = None
+        self.last_checkpoint_map = None
+        self.current_map = None
 
     def on_update(self, delta_time):
         super().on_update(delta_time)
@@ -45,7 +47,7 @@ class PlayerSprite(CharacterSprite):
 
     #sistema de checkpoints
     def return_to_checkpoint(self):
-        if self.last_checkpoint_x is not None and self.last_checkpoint_y is not None:
+        if self.last_checkpoint_x is not None and self.last_checkpoint_y is not None and self.last_checkpoint_map == self.current_map:
             self.player_sprite.center_x = self.last_checkpoint_x
             self.player_sprite.center_y = self.last_checkpoint_y
         else:
