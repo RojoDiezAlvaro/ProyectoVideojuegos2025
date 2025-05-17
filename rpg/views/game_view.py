@@ -559,7 +559,7 @@ class GameView(arcade.View):
             # No doors, scroll normally
             self.scroll_to_player()
 
-        if PlayerSprite.is_ghost(PlayerSprite):
+        if PlayerSprite.is_ghost(self.player_sprite):
             self.noclip_status = True
             self.setup_physics()
         else:

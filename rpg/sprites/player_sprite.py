@@ -54,8 +54,8 @@ class PlayerSprite(CharacterSprite):
 
     #codigo añadido sin probar(exluyendo las declaraciones en el innit)-----------------------
     #código relacionado a la muerte y el "modo fantasma"
-    def is_ghost(player):
-        return player.is_ghost
+    def is_ghost(self):
+        return self.is_ghost
 
 
     def player_death(self):
