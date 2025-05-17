@@ -8,17 +8,14 @@ FILAS = 3
 TAM_SLOT = 64
 ESPACIADO = 10
 
-# Clase para un slot del inventario
 class Slot:
     def __init__(self, item=None):
         self.item = item
 
-# Clase para un ítem
 class Item:
     def __init__(self, nombre, textura_path=None):
         self.nombre = nombre
 
-# Vista del inventario
 class InventoryView(arcade.View):
     def __init__(self):
         super().__init__()
