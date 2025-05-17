@@ -23,7 +23,7 @@ TOP_VIEWPORT_MARGIN = 300
 STARTING_MAP = "cueva_inicial"
 STARTING_X = 2
 STARTING_Y = 2
-
+INICIAL_HP = 100
 # Key mappings
 KEY_UP = [arcade.key.UP, arcade.key.W]
 KEY_DOWN = [arcade.key.DOWN, arcade.key.S]
