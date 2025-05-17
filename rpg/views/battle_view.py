@@ -19,7 +19,7 @@ class BattleView(arcade.View):
     def on_draw(self):#makes text apear on screen. The blue background will not draw w/o this
         arcade.start_render()
         arcade.draw_text(
-            "BATTLE(WIP)",
+            "BATTLE",
             self.window.width / 2,
             self.window.height - 50,
             arcade.color.WHITE,

@@ -61,5 +61,7 @@ class LoadingView(arcade.View):
                 self.window.views["settings"].setup()
                 self.window.views["battle"] = BattleView()
                 self.window.views["battle"].setup()
+                self.window.views["puzzle"] = PuzzleView()
+                self.window.views["battle"].setup()
 
                 self.window.show_view(self.window.views["game"])
