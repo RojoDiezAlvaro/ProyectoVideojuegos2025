@@ -22,6 +22,7 @@ class MyWindow(arcade.Window):
         arcade.resources.add_resource_handle("misc", "../resources/misc")
 
 
+
 def main():
     """Main method"""
     window = MyWindow()

@@ -3,7 +3,7 @@ import random
 from PIL import Image
 
 # Ruta de la imagen
-IMAGE_PATH = "../../resources/maps/foto.jpg"
+IMAGE_PATH = "../resources/maps/foto.jpg"
 
 # Dimensiones de la pantalla
 #SCREEN_WIDTH = 1280
@@ -36,9 +36,10 @@ class Tile:
         return self.current_row == self.correct_row and self.current_col == self.correct_col
 
 
-class PuzzleView(arcade.Window):
+class PuzzleView(arcade.View):
     def __init__(self):
-        super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, "Puzzle de intercambio de fichas")
+        #super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, "Puzzle de intercambio de fichas")
+        super().__init__()
         arcade.set_background_color(arcade.color.BLACK)
         self.tiles = []
         self.selected_tile = None
@@ -123,12 +124,13 @@ class PuzzleView(arcade.Window):
         return all(tile.is_in_correct_position() for tile in self.tiles)
 
 
-
+"""
 def main():
-    game = PuzzleGame()
+    game = PuzzleView()
     game.setup()
     arcade.run()
 
 
 if __name__ == "__main__":
     main()
+"""

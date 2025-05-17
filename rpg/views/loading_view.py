@@ -9,6 +9,7 @@ from rpg.views.game_view import GameView
 from rpg.views.inventory_view import InventoryView
 from rpg.views.main_menu_view import MainMenuView
 from rpg.views.settings_view import SettingsView
+from rpg.views.puzzle_view import PuzzleView
 
 
 class LoadingView(arcade.View):

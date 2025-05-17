@@ -14,8 +14,8 @@ class BattleView(arcade.View):
         self.current_background = None
         arcade.set_background_color(arcade.color.BLUE)
     def setup(self):
-        self.background_1 = arcade.load_texture("resources/maps/cavernaBattleScreen.png")
-        self.background_2 = arcade.load_texture("resources/maps/desiertoBattleScreen.png")
+        self.background_1 = arcade.load_texture(":maps:cavernaBattleScreen.png")
+        self.background_2 = arcade.load_texture(":maps:desiertoBattleScreen.png")
         self.current_background = self.background_1
         pass
     def on_show_view(self):
