@@ -9,8 +9,14 @@ class BattleView(arcade.View):
     def __init__(self):
         super().__init__()
         self.started = False
+        self.background_1 = None
+        self.background_2 = None
+        self.current_background = None
         arcade.set_background_color(arcade.color.BLUE)
     def setup(self):
+        self.background_1 = arcade.load_texture("resources/maps/CabernaBattleScreen.png")
+        self.background_2 = arcade.load_texture("resources/maps/desiertoBattleScreen.png")
+        self.current_background = self.background_1
         pass
     def on_show_view(self):
         arcade.set_background_color(arcade.color.BLUE)
@@ -18,6 +24,10 @@ class BattleView(arcade.View):
 
     def on_draw(self):#makes text apear on screen. The blue background will not draw w/o this
         arcade.start_render()
+        if self.current_background:
+            arcade.draw_lrwh_rectangle_textured(
+                0, 0, self.window.width, self.window.height, self.current_background
+            )
         arcade.draw_text(
             "BATTLE",
             self.window.width / 2,
