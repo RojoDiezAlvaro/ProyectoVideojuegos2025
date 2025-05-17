@@ -1,0 +1,148 @@
+[{
+  "version": "1.0",
+  "image": {
+    "name": "/var/www/imageconvert_usr/data/www/imageconvert.org/image/public/uploadt/Basechipo2.pipo.png",
+    "format": "json",
+    "formatDescription": "The image format and characteristics",
+    "mimeType": "application/json",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 1024,
+      "height": 2016,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 28.34,
+      "y": 28.34
+    },
+    "printSize": {
+      "x": 36.1327,
+      "y": 71.1362
+    },
+    "units": "PixelsPerCentimeter",
+    "type": "TrueColorAlpha",
+    "endianness": "Undefined",
+    "colorspace": "sRGB",
+    "depth": 8,
+    "baseDepth": 8,
+    "channelDepth": {
+      "alpha": 8,
+      "red": 8,
+      "green": 8,
+      "blue": 8
+    },
+    "pixels": 2064384,
+    "imageStatistics": {
+      "all": {
+        "min": 0,
+        "max": 255,
+        "mean": 147.613,
+        "standardDeviation": 89.7596,
+        "kurtosis": -1.50211,
+        "skewness": -0.150911,
+        "entropy": 0.70035
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 255,
+        "max": 0,
+        "mean": 61.0755,
+        "standardDeviation": 104.63,
+        "kurtosis": -0.414716,
+        "skewness": -1.22085,
+        "entropy": 0.214581
+      },
+      "red": {
+        "min": 0,
+        "max": 255,
+        "mean": 145.745,
+        "standardDeviation": 80.9119,
+        "kurtosis": -1.21577,
+        "skewness": -0.0514444,
+        "entropy": 0.871026
+      },
+      "green": {
+        "min": 0,
+        "max": 255,
+        "mean": 134.772,
+        "standardDeviation": 82.3262,
+        "kurtosis": -1.21845,
+        "skewness": 0.141999,
+        "entropy": 0.868741
+      },
+      "blue": {
+        "min": 0,
+        "max": 255,
+        "mean": 116.01,
+        "standardDeviation": 91.1703,
+        "kurtosis": -1.31889,
+        "skewness": 0.43871,
+        "entropy": 0.847052
+      }
+    },
+    "alpha": "#FFFFFF00",
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFF",
+    "borderColor": "#DFDFDFFF",
+    "matteColor": "#BDBDBDFF",
+    "transparentColor": "#00000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 1024,
+      "height": 2016,
+      "x": 0,
+      "y": 0
+    },
+    "dispose": "Undefined",
+    "iterations": 0,
+    "compression": "Zip",
+    "orientation": "Undefined",
+    "properties": {
+      "Creation Time": "03/24/10",
+      "date:create": "2025-05-17T12:21:35+00:00",
+      "date:modify": "2025-05-17T12:21:35+00:00",
+      "png:IHDR.bit-depth-orig": "8",
+      "png:IHDR.bit_depth": "8",
+      "png:IHDR.color-type-orig": "6",
+      "png:IHDR.color_type": "6 (RGBA)",
+      "png:IHDR.interlace_method": "0 (Not interlaced)",
+      "png:IHDR.width,height": "1024, 2016",
+      "png:pHYs": "x_res=2834, y_res=2834, units=1",
+      "png:sRGB": "intent=0 (Perceptual Intent)",
+      "png:text": "2 tEXt/zTXt/iTXt chunks were found",
+      "signature": "e3d7224287cefe1ea1c310daceb7e8b21eb551850266355427302e77054ec872",
+      "Software": "Macromedia Fireworks MX"
+    },
+    "tainted": false,
+    "filesize": "3.67855MB",
+    "numberPixels": "2.06438M",
+    "pixelsPerSecond": "28.9582MB",
+    "userTime": "0.070u",
+    "elapsedTime": "0:01.071",
+    "version": "ImageMagick 6.9.11-60 Q16 x86_64 2021-01-25 https://imagemagick.org"
+  }
+}
+]
