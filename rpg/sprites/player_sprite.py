@@ -9,7 +9,7 @@ class PlayerSprite(CharacterSprite):
         super().__init__(sheet_name)
         self.player_sprite = arcade.Sprite("../resources/characters/MainCharacterAndCorpse/PlayerNotFinal.png")
         self.sound_update = 0
-        self.footstep_sound = arcade.load_sound(":sounds:footstep00.wav")
+        self.footstep_sound = arcade.load_sound(":sounds:sonidosPasos .wav")
         self.corpse_sprite = arcade.Sprite("../resources/characters/MainCharacterAndCorpse/CorpseNotFinal.png")
         self.corpse_exists = False
         self.is_ghost = False
