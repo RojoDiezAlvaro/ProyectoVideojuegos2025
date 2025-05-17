@@ -13,6 +13,7 @@ import rpg.constants as constants
 from arcade.experimental.lights import Light
 from pyglet.math import Vec2
 from rpg.message_box import MessageBox
+from rpg.sprites.character_sprite import CharacterSprite
 from rpg.sprites.player_sprite import PlayerSprite
 
 

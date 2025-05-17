@@ -10,7 +10,6 @@ class PlayerSprite(CharacterSprite):
         self.player_sprite = arcade.Sprite("../resources/characters/MainCharacterAndCorpse/PlayerNotFinal.png")
         self.sound_update = 0
         self.footstep_sound = arcade.load_sound(":sounds:footstep00.wav")
-        #aún hay que añadir el sprite del cadaver
         self.corpse_sprite = arcade.Sprite("../resources/characters/MainCharacterAndCorpse/CorpseNotFinal.png")
         self.corpse_exists = False
         self.is_ghost = False
@@ -42,7 +41,7 @@ class PlayerSprite(CharacterSprite):
         if self.is_ghost:
             self.player_sprite = arcade.Sprite("../resources/characters/MainCharacterAndCorpse/Fantasma.png")
             self.interact_with_corpse()
-            # codigo añadido sin probar(exluyendo las declaraciones en el innit)---------------------------------------------
+            # codigo añadido sin probar(excluyendo las declaraciones en el innit)---------------------------------------------
 
     #sistema de checkpoints
     def return_to_checkpoint(self):
@@ -55,8 +54,8 @@ class PlayerSprite(CharacterSprite):
 
     #codigo añadido sin probar(exluyendo las declaraciones en el innit)-----------------------
     #código relacionado a la muerte y el "modo fantasma"
-    def is_ghost(self):
-        return self.is_ghost
+    def is_ghost(player):
+        return player.is_ghost
 
 
     def player_death(self):
