@@ -5,6 +5,9 @@ from PIL import Image
 # Ruta de la imagen
 IMAGE_PATH = "../resources/maps/foto.jpg"
 
+# Dimensiones de la pantalla
+#SCREEN_WIDTH = 1280
+#SCREEN_HEIGHT = 720
 
 # Configuración del puzzle
 NUM_COLS = 6
