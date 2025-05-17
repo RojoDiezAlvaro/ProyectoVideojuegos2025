@@ -1,19 +1,16 @@
+"""
+Battle View
+"""
 import arcade
 import random
 from PIL import Image
+import rpg.constants as constants
 
-# Ruta de la imagen
 IMAGE_PATH = "../resources/maps/foto.jpg"
 
-# Dimensiones de la pantalla
-#SCREEN_WIDTH = 1280
-#SCREEN_HEIGHT = 720
-
-# Configuración del puzzle
 NUM_COLS = 6
 NUM_ROWS = 4
 
-# Obtener dimensiones reales de la imagen
 with Image.open(IMAGE_PATH) as img:
     IMAGE_WIDTH, IMAGE_HEIGHT = img.size
 
@@ -22,7 +19,6 @@ TILE_HEIGHT = IMAGE_HEIGHT // NUM_ROWS
 
 SCREEN_WIDTH = TILE_WIDTH * NUM_COLS
 SCREEN_HEIGHT = TILE_HEIGHT * NUM_ROWS
-
 
 class Tile:
     def __init__(self, texture, correct_row, correct_col):
@@ -38,18 +34,17 @@ class Tile:
 
 class PuzzleView(arcade.View):
     def __init__(self):
-        #super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, "Puzzle de intercambio de fichas")
         super().__init__()
-        arcade.set_background_color(arcade.color.BLACK)
+        self.started = False
         self.tiles = []
         self.selected_tile = None
         self.solved = False  # Bandera de victoria
+        arcade.set_background_color(arcade.color.BLACK)
 
     def setup(self):
         self.tiles = []
         self.selected_tile = None
         self.solved = False  # Reiniciar bandera
-
         for row in range(NUM_ROWS):
             for col in range(NUM_COLS):
                 texture = arcade.load_texture(IMAGE_PATH,
@@ -60,12 +55,15 @@ class PuzzleView(arcade.View):
                 tile = Tile(texture, row, col)
                 self.tiles.append(tile)
 
-        # Mezclar las posiciones
         positions = [(row, col) for row in range(NUM_ROWS) for col in range(NUM_COLS)]
         random.shuffle(positions)
         for tile, (row, col) in zip(self.tiles, positions):
             tile.current_row = row
             tile.current_col = col
+
+    def on_show_view(self):
+        arcade.set_background_color(arcade.color.BLACK)
+        arcade.set_viewport(0, SCREEN_WIDTH, 0, SCREEN_HEIGHT)
 
     def on_draw(self):
         arcade.start_render()
@@ -78,9 +76,8 @@ class PuzzleView(arcade.View):
             if tile == self.selected_tile:
                 arcade.draw_rectangle_outline(x, y, TILE_WIDTH, TILE_HEIGHT, arcade.color.RED, 3)
 
-
         if self.solved:
-            #una vez resuelto el puzzle, dirigir a mapa de momento solo se dibuja un mensaje
+            # una vez resuelto el puzzle, dirigir a mapa de momento solo se dibuja un mensaje
             arcade.draw_text(
                 "¡Puzzle resuelto!",
                 SCREEN_WIDTH // 2,
@@ -122,15 +119,3 @@ class PuzzleView(arcade.View):
 
     def is_solved(self):
         return all(tile.is_in_correct_position() for tile in self.tiles)
-
-
-"""
-def main():
-    game = PuzzleView()
-    game.setup()
-    arcade.run()
-
-
-if __name__ == "__main__":
-    main()
-"""
