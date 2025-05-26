@@ -583,7 +583,7 @@ class GameView(arcade.View):
         elif key in constants.KEY_RIGHT:
             self.right_pressed = True
         elif key in constants.INVENTORY:
-            self.window.show_view(self.window.views["inventory"])
+            self.window.show_view(self.window.views["battle"])
         elif key == arcade.key.ESCAPE:
             self.window.show_view(self.window.views["main_menu"])
         elif key in constants.SEARCH:
