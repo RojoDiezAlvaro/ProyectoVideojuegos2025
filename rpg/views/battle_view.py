@@ -10,8 +10,6 @@ class BattleView(arcade.View):
         self.previous_view = previous_view  # Vista anterior (mundo, mapa, etc.)
         self.return_x = player_x
         self.return_y = player_y
-
-        super().__init__()
         self.started = False
         self.background_1 = None
         self.background_2 = None
