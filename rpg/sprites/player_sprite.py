@@ -1,3 +1,5 @@
+import os
+
 import arcade
 
 from rpg.constants import STARTING_Y, STARTING_X
