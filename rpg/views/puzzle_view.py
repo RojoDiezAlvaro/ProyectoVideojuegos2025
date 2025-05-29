@@ -6,7 +6,8 @@ import random
 from PIL import Image
 import rpg.constants as constants
 
-IMAGE_PATH = "../resources/maps/foto.jpg"
+IMAGE_PATH = "../resources/maps/fotopuz.png"
+
 
 NUM_COLS = 6
 NUM_ROWS = 4
@@ -19,6 +20,7 @@ TILE_HEIGHT = IMAGE_HEIGHT // NUM_ROWS
 
 SCREEN_WIDTH = TILE_WIDTH * NUM_COLS
 SCREEN_HEIGHT = TILE_HEIGHT * NUM_ROWS
+
 
 class Tile:
     def __init__(self, texture, correct_row, correct_col):
@@ -33,7 +35,7 @@ class Tile:
 
 
 class PuzzleView(arcade.View):
-    def __init__(self):
+    def __init__(self,window_width,window_height):
         super().__init__()
         self.started = False
         self.tiles = []

@@ -4,9 +4,14 @@ Battle View
 
 import arcade
 import rpg.constants as constants
-
+import time
 class BattleView(arcade.View):
-    def __init__(self):
+    def __init__(self, previous_view, player_x, player_y):
+        super().__init__()
+        self.previous_view = previous_view  # Vista anterior (mundo, mapa, etc.)
+        self.return_x = player_x
+        self.return_y = player_y
+
         super().__init__()
         self.started = False
         self.background_1 = None
@@ -16,7 +21,7 @@ class BattleView(arcade.View):
         # Lista de botones con sus posiciones, etiquetas y teclas asociadas
         self.buttons = []
         self.player_hp = 100
-        self.enemy_hp = 100
+        self.enemy_hp = 20
         self.message = "¿Qué vas a hacer?"
         self.message_timer = 0
         self.full_message = ""  # Mensaje completo
@@ -29,8 +34,8 @@ class BattleView(arcade.View):
         self.player_frame = None
         self.enemy_sprite = None
 
-        self.player_pos = [100, 150]  # Posición base del jugador
-        self.enemy_pos = [600, 350]  # Posición base del enemigo
+        self.player_pos = [300, 250]  # Posición base del jugador
+        self.enemy_pos = [900, 250]  # Posición base del enemigo
 
         self.attack_animation = False
         self.attack_timer = 0
@@ -226,5 +231,10 @@ class BattleView(arcade.View):
 
             if self.attack_timer <= 0:
                 self.attack_animation = False
-                self.player_pos = [100, 150]
-                self.enemy_pos = [600, 350]
+                self.player_pos = [300, 250]
+                self.enemy_pos = [900, 250]
+
+        if self.enemy_hp == 0:
+            self.previous_view.player_sprite.center_x = self.return_x
+            self.previous_view.player_sprite.center_y = self.return_y
+            self.window.show_view(self.previous_view)

@@ -13,6 +13,7 @@ import rpg.constants as constants
 from arcade.experimental.lights import Light
 from pyglet.math import Vec2
 from rpg.message_box import MessageBox
+from rpg.views.battle_view import BattleView
 from rpg.sprites.character_sprite import CharacterSprite
 from rpg.sprites.player_sprite import PlayerSprite
 
@@ -583,11 +584,17 @@ class GameView(arcade.View):
         elif key in constants.KEY_RIGHT:
             self.right_pressed = True
         elif key in constants.INVENTORY:
-            self.window.show_view(self.window.views["battle"])
+            self.window.show_view(self.window.views["puzzle"])
         elif key == arcade.key.ESCAPE:
             self.window.show_view(self.window.views["main_menu"])
         elif key in constants.SEARCH:
             self.search()
+        elif key == arcade.key.C:
+            battle_view = BattleView(previous_view=self, player_x=self.player_sprite.center_x,
+                                     player_y=self.player_sprite.center_y)
+            battle_view.setup()
+            self.window.show_view(battle_view)
+
         elif key == arcade.key.KEY_1:
             self.selected_item = 1
         elif key == arcade.key.KEY_2:
@@ -652,6 +659,8 @@ class GameView(arcade.View):
                 self.message_box = MessageBox(
                     self, "Checkpoint guardado"
                 )
+            elif "cambioAPuzzle" in sprite.properties:
+                self.window.show_view(self.window.views["puzzle"])
             else:
                 print(
                     "The 'item' property was not set for the sprite. Can't get any items from this."
