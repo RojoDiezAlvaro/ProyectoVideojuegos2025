@@ -52,6 +52,7 @@ class PlayerSprite(CharacterSprite):
             self.player_sprite.center_y = self.last_checkpoint_y
         else:
             self.player_sprite.center_x = self.starter_checkpoint_x
+            #
             self.player_sprite.center_y = self.starter_checkpoint_y
 
     #codigo añadido sin probar(exluyendo las declaraciones en el innit)-----------------------
