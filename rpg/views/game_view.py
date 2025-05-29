@@ -583,7 +583,7 @@ class GameView(arcade.View):
         elif key in constants.KEY_RIGHT:
             self.right_pressed = True
         elif key in constants.INVENTORY:
-            self.window.show_view(self.window.views["battle"])
+            self.window.show_view(self.window.views["puzzle"])
         elif key == arcade.key.ESCAPE:
             self.window.show_view(self.window.views["main_menu"])
         elif key in constants.SEARCH:
@@ -652,6 +652,8 @@ class GameView(arcade.View):
                 self.message_box = MessageBox(
                     self, "Checkpoint guardado"
                 )
+            elif "cambioAPuzzle" in sprite.properties:
+                self.window.show_view(self.window.views["puzzle"])
             else:
                 print(
                     "The 'item' property was not set for the sprite. Can't get any items from this."
