@@ -35,7 +35,7 @@ class Tile:
 
 
 class PuzzleView(arcade.View):
-    def __init__(self):
+    def __init__(self,window_width,window_height):
         super().__init__()
         self.started = False
         self.tiles = []
