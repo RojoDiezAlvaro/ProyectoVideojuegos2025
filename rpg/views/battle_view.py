@@ -4,7 +4,6 @@ Battle View
 
 import arcade
 import rpg.constants as constants
-import time
 class BattleView(arcade.View):
     def __init__(self, previous_view, player_x, player_y):
         super().__init__()
@@ -47,13 +46,13 @@ class BattleView(arcade.View):
         self.current_background = self.background_1
         self.enemy_sprite = arcade.load_texture("../resources/characters/Enemy/Armadura_viviente.png")
         self.player_texture = arcade.load_spritesheet(
-            "../resources/characters/MainCharacterAndCorpse/PlayerNotFinal.png",  # ruta de tu spritesheet
-            sprite_width=32,
-            sprite_height=32,
+            "../resources/characters/MainCharacterAndCorpse/PlayerCombat.png",  # ruta de tu spritesheet
+            sprite_width=145,
+            sprite_height=151,
             columns=3,
             count=12
         )
-        self.player_frame = self.player_texture[10]  # Frame específico: fila 3, columna 2 (índice 10)
+        self.player_frame = self.player_texture[0]  # Frame específico: fila 3, columna 2 (índice 10)
 
 
         # Definir los botones con su posición, etiqueta y tecla asociada
@@ -82,6 +81,7 @@ class BattleView(arcade.View):
         if self.enemy_hp <= 0:
             self.enemy_hp = 0
             self.set_message("¡Enemigo derrotado!", 2)
+            self.state = "battle_won"
         else:
             self.set_message(f"¡Atacaste! El enemigo ha perdido {damage} HP.", 2)
             self.state = "enemy_wait"
@@ -203,6 +203,11 @@ class BattleView(arcade.View):
                     elif self.state == "enemy_attack":
                         self.enemy_turn()
                         self.state = "player_turn"
+                    elif self.state == "battle_won":
+                        # Ya se mostró el mensaje "¡Enemigo derrotado!", ahora salimos
+                        self.previous_view.player_sprite.center_x = self.return_x
+                        self.previous_view.player_sprite.center_y = self.return_y
+                        self.window.show_view(self.previous_view)
                     else:
                         self.set_message("¿Qué vas a hacer?", duration=9999)
 
@@ -233,8 +238,3 @@ class BattleView(arcade.View):
                 self.attack_animation = False
                 self.player_pos = [300, 250]
                 self.enemy_pos = [900, 250]
-
-        if self.enemy_hp == 0:
-            self.previous_view.player_sprite.center_x = self.return_x
-            self.previous_view.player_sprite.center_y = self.return_y
-            self.window.show_view(self.previous_view)
