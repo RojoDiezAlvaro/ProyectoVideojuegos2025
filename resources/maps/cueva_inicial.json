@@ -5,11 +5,78 @@
  "layers":[
         {
          "compression":"zlib",
-         "data":"eJzt1EESgjAMQFE8C\/e\/o1tHkRYITYD3ZthVWvKR+TVN88J11NI9t96\/dY8j967qrGe+co\/M5lk9Rl\/RMzlLxPNlz7p6Xz2u26OHHrV6VJh5z\/lGnjPbnvNW6hH9rNmye7TmETkrPeL\/L\/w6+v0Zfd3dXXrcpXfUmTJ7ZL8L0fS4bo\/sOY88U5Ue33tXeu971kXNQI++fVvromehx\/q+rXVnzEOP\/vV65Pf4\/M1Zc8vqsdWoHq29\/q15mio9sr8r1YzosWe\/p9KjFj1qGd2DdXrUogUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQ1Rsobq49",
+         "data":"eJzt1EEOgjAQQFE9C\/e\/o1tjkBaYdgZ4L2FX2zKfuLxfr2XlOWttz737t\/Y4s3dVo975yj0ym2f1mP1Ez2SUiPfLnnX1vnpct0cPPWr1qDDzavfMduS+lXpEv2u27B4z55F9ftQd79Ljrs7Mc2TLpza+S4+79I66U2aP7G8hmh7X7ZE955l3qtLj9+xK333PuqgZ6NF3bmtd9Cz02D63tW7EPPToX69Hfo\/v34yaW1aPvWb1aJ31b83TVOmR\/b9SzYweR857Kj1q0aOW2T3YpkctWgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABVfQD1Ca2J",
          "encoding":"base64",
          "height":100,
          "id":1,
          "name":"floor",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":100,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":3,
+         "name":"doors",
+         "objects":[
+                {
+                 "gid":351,
+                 "height":32,
+                 "id":151,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"map_name",
+                         "type":"string",
+                         "value":"oasis"
+                        }, 
+                        {
+                         "name":"start_x",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"start_y",
+                         "type":"int",
+                         "value":8
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":1771.25,
+                 "y":640.75
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "compression":"zlib",
+         "data":"eJzt2b1qHDEQwPGFe7c8ndM5nd05XdLZL5AEG4wbc2nCpU5jkzKNIeQGsiCEPmakkbXm\/j9YYjY6raTRarS7+2VZfkTH96XfPlGvtf5SHXF9+8Wv7TM9Js4dlnr\/NfV+PR63x+Mu+Pdb5pq5Ot4py8nxZ6evu6Q2D0bGXNr\/fmf\/jabMl8T5+6Ue7\/X4qWzP4X\/Zv7t03dbxq\/XPI+aluj90xiM1n2R87vub103uL238tfNgZDw0bY3nV9yeke1bybjuE22Z4TX6WyIxC8ehJx6yhmnzdGreeuS2XrPjIcI2xGMS39\/hXifOIZb80TLGqT2ANf61620tHtqyuZw+8tqpWGv3BdrrnXo84jEetSa9ZK7XG98RLGvM2t5UPLT5ozTmW5ifb1EqHg+L\/vklx5p\/vHPUWyVjGj6DrPeF5n4Px3z2nql1P7i1eNf2yZZ6Rvcp1zaJhUe+KN3Trxmrx8zfLTzXqdozrlebU56D42nQNXIs8fBYF7RzT\/tMG55vbV9p\/s+MR7x+ibCP3vvIs8L73pZ4jFhvf3XU2yK+1kviGOXcEI\/UXInLeay38TV+O9RrMftZwZIXauc8+iJ1rLlDzFyvROn+sLy\/vQi+EVwWvhdY4pGav97xCNeuGfm89u7xEP2ftO1M8T3mKijzsSEeufWptEf3HLe431slfT5Xfh\/7dCz3uVK2NIbWHD577Z3B8ux3fYzFTUc8cu8AcnP3FOOxqvU9zBkXDetVSznikRfmjCviMZxX37X1aN7FbDnvjqbdZ+Wsvz3lOe3Jss9Kkd96vZuFz7tcYgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEb4B9QG2Sk=",
+         "encoding":"base64",
+         "height":100,
+         "id":2,
+         "name":"walls_blocking",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":100,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "compression":"zlib",
+         "data":"eJzt2DEKwjAUBuCKLuqkTurgadSjeGo3dVLPYEEpQSgUW01qvg+ytFBe85O8tEVByo7D2BUQur3yuNTcP2WS17nmPbe\/LaNyr7l+zSSPW8\/fczOKXQE5OvR83fyLFM85TXp51\/1+1+3jPpZiP2nSy3Pp9zylsl5yZO7zJPf+afNdLu9umU9S4b\/Lb40HRTEJxnQQu6K8zcr5nwdjIY+oluX8r4Kxlgcky1n2+\/axC6DivPw\/3veuMFv7GgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbTwAzBMSKQ==",
+         "encoding":"base64",
+         "height":100,
+         "id":5,
+         "name":"decorative_nonblocking",
          "opacity":1,
          "type":"tilelayer",
          "visible":true,
@@ -841,29 +908,6 @@
                 }, 
                 {
                  "height":0,
-                 "id":134,
-                 "name":"",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"color",
-                         "type":"color",
-                         "value":"#ffc9d304"
-                        }, 
-                        {
-                         "name":"radius",
-                         "type":"int",
-                         "value":75
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":1197.33333333333,
-                 "y":630.666666666667
-                }, 
-                {
-                 "height":0,
                  "id":135,
                  "name":"",
                  "point":true,
@@ -907,29 +951,6 @@
                  "width":0,
                  "x":1268,
                  "y":825.333333333333
-                }, 
-                {
-                 "height":0,
-                 "id":137,
-                 "name":"",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"color",
-                         "type":"color",
-                         "value":"#ffc9d304"
-                        }, 
-                        {
-                         "name":"radius",
-                         "type":"int",
-                         "value":75
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":1208,
-                 "y":630.666666666667
                 }, 
                 {
                  "height":0,
@@ -1103,77 +1124,56 @@
                  "width":32,
                  "x":1771.27272727273,
                  "y":608.545454545455
-                }],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":true,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "draworder":"topdown",
-         "id":3,
-         "name":"doors",
-         "objects":[
+                }, 
                 {
-                 "gid":351,
+                 "gid":996,
                  "height":32,
-                 "id":151,
+                 "id":181,
                  "name":"",
                  "properties":[
                         {
-                         "name":"map_name",
-                         "type":"string",
-                         "value":"oasis"
+                         "name":"color",
+                         "type":"color",
+                         "value":"#ffc9d304"
                         }, 
                         {
-                         "name":"start_x",
+                         "name":"radius",
                          "type":"int",
-                         "value":8
-                        }, 
-                        {
-                         "name":"start_y",
-                         "type":"int",
-                         "value":8
+                         "value":75
                         }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":32,
-                 "x":1771.25,
-                 "y":640.75
+                 "x":1232.5,
+                 "y":602.5
+                }, 
+                {
+                 "gid":996,
+                 "height":32,
+                 "id":182,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"color",
+                         "type":"color",
+                         "value":"#ffc9d304"
+                        }, 
+                        {
+                         "name":"radius",
+                         "type":"int",
+                         "value":75
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":255.5,
+                 "y":128.5
                 }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "compression":"zlib",
-         "data":"eJzt2b1KBDEQwPHAvZtPp512Z6eddvoCKgpiIyeInFjaKJaW4gUMhJCPmWxyWbn\/D5aTM5dNMtlMdndljHkJjicz3SpSr7b+XB1hfSvTru0jPUa+W5ty\/yX1Xm+O281x533eJM6ZqmNPWM4e3wt53TmledAz5rb9Bwv9byRlriLf35tyvN3xKmzP+q\/szyJet3b8Sv1rEfNc3UcT4xGbT3Z87qc3bzJ7fUnjL50HPeMhaWs4v8L29GyfY8d1FWnLCNvob46NmT8OU+Jh1zBpno7N29T8eTbby+ej42H5bQjHJLy+\/b1OmEM0+UO7f3Cf4R5AG\/\/S+eYWD2nZVE7vcW5X5s3U7wuk59v1eITXU2z+ujLasZecb2p8e9CsMa69sXhI80duzZjD\/PyPYvF4MLr1J0abf1rlqP\/Ojql\/D+KuC8n17o\/56D1T7X5wbvEu7ZM19fTuU6ptNha9c9I2Y\/WY+LtGy3WqdI\/bqs0xn97x0ekcKZp4tFgXpHNPek\/rf1\/bvtz8HxmPcP2y\/D623kfuZ5731sSjx3r7PqHeGiP3poeKeMTmSliuxXobnuOrQb0ao+8VNHmh9F2Lvtg6XO6wRq5XJZrnt0vvHcFx5n2BJh6x+ds6Hv7aNSKfl549roP\/2bbtC97HnHhlTivikVqfcnv0luMW9nuubJ8Phe\/Hzjblzgtlc2OozeGj194RNPd+F5tYXE6IR+oZQGru7mI8nFLf\/ZyxrFivasoRjzQ\/Z5wQj+5a9V1aj+RZzJzzbm\/SfVaK++0uz+mWNPusGPvbVs9m0eZZLrEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9\/ALnedKT",
-         "encoding":"base64",
-         "height":100,
-         "id":2,
-         "name":"walls_blocking",
-         "opacity":1,
-         "type":"tilelayer",
-         "visible":true,
-         "width":100,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "compression":"zlib",
-         "data":"eJzt2DEOgjAUBmCILuqkTurgadSjeGo33fQOkpiYxsRABGmh35d0JY\/3U16hKEjZZRK7AkKPmjyumeR1+3Kfh37LqHXPJI+65zJ1+2nsCsjReeD7ZixSPOc0meVdz\/tjt5f7WYrzpMksz2Xe85LKfsmR3udJ7sPT5rtc3t3ST1Lhv0u\/ZmVRzIO1KGNXlLdl1f9VsNbyiGpT9X8brJ08IFnOsv93il0Ab87L4\/H57gqz9V4DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKCNJ20JEFU=",
-         "encoding":"base64",
-         "height":100,
-         "id":5,
-         "name":"decorative_nonblocking",
-         "opacity":1,
-         "type":"tilelayer",
-         "visible":true,
-         "width":100,
          "x":0,
          "y":0
         }, 
@@ -1214,7 +1214,7 @@
         {
          "draworder":"topdown",
          "id":7,
-         "name":"serchable",
+         "name":"searchable",
          "objects":[
                 {
                  "gid":863,
@@ -1243,8 +1243,26 @@
                  "type":"",
                  "visible":true,
                  "width":32,
-                 "x":63.5,
-                 "y":63
+                 "x":64,
+                 "y":63.5
+                }, 
+                {
+                 "gid":238,
+                 "height":32,
+                 "id":173,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"checkpoint",
+                         "type":"string",
+                         "value":""
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":192,
+                 "y":127.5
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1253,7 +1271,7 @@
          "y":0
         }],
  "nextlayerid":10,
- "nextobjectid":173,
+ "nextobjectid":183,
  "orientation":"orthogonal",
  "properties":[
         {

@@ -629,15 +629,14 @@ class GameView(arcade.View):
         """Search for things"""
         #también se usará para los checkpoints, para ahorrar código y tiempo
         map_layers = self.map_list[self.cur_map_name].map_layers
-        if "searchable" not in map_layers:
+        if "searchable" not in map_layers :
             print(f"No searchable sprites on {self.cur_map_name} map layer.")
-            return
-
         searchable_sprites = map_layers["searchable"]
         sprites_in_range = arcade.check_for_collision_with_list(
             self.player_sprite, searchable_sprites
         )
-        print(f"Found {len(sprites_in_range)} searchable sprite(s) in range.")
+        if "searchable" in map_layers:
+            print(f"Found {len(sprites_in_range)} searchable sprite(s) in range.")
         for sprite in sprites_in_range:
             if "item" in sprite.properties:
                 self.message_box = MessageBox(
@@ -650,6 +649,9 @@ class GameView(arcade.View):
                 self.player_sprite.last_checkpoint_map = self.cur_map_name
                 self.player_sprite.last_checkpoint_x = self.player_sprite.center_x
                 self.player_sprite.last_checkpoint_y = self.player_sprite.center_y
+                self.message_box = MessageBox(
+                    self, "Checkpoint guardado"
+                )
             else:
                 print(
                     "The 'item' property was not set for the sprite. Can't get any items from this."
