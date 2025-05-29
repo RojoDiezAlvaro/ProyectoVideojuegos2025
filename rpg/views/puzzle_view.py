@@ -8,6 +8,7 @@ import rpg.constants as constants
 
 IMAGE_PATH = "../resources/maps/fotopuz.png"
 
+
 NUM_COLS = 6
 NUM_ROWS = 4
 
