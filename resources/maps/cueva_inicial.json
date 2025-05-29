@@ -47,20 +47,8 @@
                  "type":"",
                  "visible":true,
                  "width":32,
-                 "x":1770,
-                 "y":700.666666666667
-                }, 
-                {
-                 "gid":343,
-                 "height":32,
-                 "id":228,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":1770,
-                 "y":669.666666666667
+                 "x":1759.5,
+                 "y":672.166666666667
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -84,7 +72,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJzt2FFOwyAYAOAu8wLqATyN8yhexiv65uO8g\/HB2JBSCIMW1u9LSJZlpfD\/\/YFumujNy8P\/56\/zfuNYcol8Px\/zPbsG+QjnfUu+Lgv95do6\/p\/neOtJmK8aWsY6Vl8p3+d4G0EsprVivdW6lervte7tDqUkV6lr3gepj56UrlFzI+wfOXt57fNZjdiWGGH\/SJ29ln6z5ihn1p7Ufr73qpd7U1ILYj+WVI5znwF5bycnByW1uvbekepPvutq8T+Ps0w\/fnPx13pXc4wfmWfvPeIyQi7WjD7+UC\/zeTxN09OsPZ\/K+lmaTy9zHEksH2EsxbadeWxz6mO+7svLsXg3uE1Ovby1HwaZrG\/tbRXjcO2a39e6FqcG9pH7fl37WgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgzA9+Bi8l",
+         "data":"eJzt2MFNwzAUANBUZQFgAKahjMAILMOK3DjCDogDwori2HLsxG7fkyxVVePY\/+fbTqeJ3jzd\/X\/+PB83jiWXyPfhmK\/Z1ywf83lvyddlob9ce8f\/4xxvPZnnq4aWsY7VV8r3Od5GEItprVjvtW6l+nuue7ubUpKr1DVvg9RHT0rXqNAI+0fOXl77fFYjtiVG2D9SZ6+l36y5lTNrT2o\/30fVy7UpqQWxH0sqx7nPgLy3k5ODklpde+9I9SffdbX4n8dZph+\/ufhrvas5xvfMs\/cRcRkhF2tGH\/9cL\/O5P03TQ9AeT2X9LM2nlzmOJJaPeSzFtp0wtjn1Ea77W\/LyWlh7HMe7wTY59fLSfhhksu+0t1eM52tXeF\/rWpwaOEbu+3XtawEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAMj+2ai99",
          "encoding":"base64",
          "height":100,
          "id":5,
@@ -1296,8 +1284,20 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":1788,
-                 "y":672
+                 "x":1760,
+                 "y":608
+                }, 
+                {
+                 "gid":164,
+                 "height":32,
+                 "id":276,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":1697,
+                 "y":703
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1349,6 +1349,60 @@
                  "width":32,
                  "x":2432,
                  "y":191.833333333333
+                }, 
+                {
+                 "gid":1028,
+                 "height":32,
+                 "id":268,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Enemigo",
+                         "type":"string",
+                         "value":""
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":197.333333333333,
+                 "y":116
+                }, 
+                {
+                 "gid":1029,
+                 "height":32,
+                 "id":273,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Enemigo",
+                         "type":"string",
+                         "value":""
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":875,
+                 "y":245
+                }, 
+                {
+                 "gid":156,
+                 "height":32,
+                 "id":275,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Enemigo",
+                         "type":"string",
+                         "value":""
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":1697,
+                 "y":673
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1357,7 +1411,7 @@
          "y":0
         }],
  "nextlayerid":10,
- "nextobjectid":268,
+ "nextobjectid":281,
  "orientation":"orthogonal",
  "properties":[
         {

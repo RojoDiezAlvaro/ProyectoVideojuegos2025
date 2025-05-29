@@ -585,22 +585,16 @@ class GameView(arcade.View):
             self.left_pressed = True
         elif key in constants.KEY_RIGHT:
             self.right_pressed = True
-        elif key in constants.INVENTORY:
-            #self.window.show_view(self.window.views["inventory"])
 
-            puzzle_view = PuzzleView(self)
-            puzzle_view.setup()
-            self.window.show_view(puzzle_view)
+
+
 
         elif key == arcade.key.ESCAPE:
             self.window.show_view(self.window.views["main_menu"])
         elif key in constants.SEARCH:
             self.search()
-        elif key == arcade.key.C:
 
-            battle_view = BattleView(previous_view=self, player_x=self.player_sprite.center_x,player_y=self.player_sprite.center_y)
-            battle_view.setup()
-            self.window.show_view(battle_view)
+
 
         elif key == arcade.key.KEY_1:
             self.selected_item = 1
@@ -667,7 +661,16 @@ class GameView(arcade.View):
                     self, "Checkpoint guardado"
                 )
             elif "cambioAPuzzle" in sprite.properties:
-                self.window.show_view(self.window.views["puzzle"])
+                puzzle_view = PuzzleView(self)
+                puzzle_view.setup()
+                self.window.show_view(puzzle_view)
+
+            elif"Enemigo" in sprite.properties:
+                battle_view = BattleView(previous_view=self, player_x=self.player_sprite.center_x,
+                                         player_y=self.player_sprite.center_y)
+                battle_view.setup()
+                self.window.show_view(battle_view)
+
             else:
                 print(
                     "The 'item' property was not set for the sprite. Can't get any items from this."

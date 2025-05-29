@@ -117,7 +117,13 @@ class PuzzleView(arcade.View):
 
         if self.is_solved() and not self.solved:
             self.solved = True
-            self.full_message = "¡Puzzle resuelto!"
+            self.full_message = (
+                "El sol abrasaba las dunas infinitas. Cerró los ojos y recordó: "
+        "el viento entre los árboles, la risa de su madre, su padre llamando a Sol, su caballo. "
+        "Campos verdes, pan casero, tardes felices. Luego llegó la tormenta. "
+        "Todo desapareció. Solo queda el recuerdo... y la voluntad de seguir.                                                                                                                                                                           "
+        "                                                                                                         "
+        )
             self.displayed_message = ""
             self.message_char_index = 0
             self.message_timer = self.message_speed
