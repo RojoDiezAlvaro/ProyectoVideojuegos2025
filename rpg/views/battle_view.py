@@ -25,11 +25,31 @@ class BattleView(arcade.View):
         self.message_char_index = 0  # Índice actual de la letra
         self.state = "player_turn"  # Otros: "enemy_wait", "enemy_attack"
         self.enemy_timer = 0
+        self.player_texture = None
+        self.player_frame = None
+        self.enemy_sprite = None
+
+        self.player_pos = [100, 150]  # Posición base del jugador
+        self.enemy_pos = [600, 350]  # Posición base del enemigo
+
+        self.attack_animation = False
+        self.attack_timer = 0
+        self.attacker = None  # "player" o "enemy"
 
     def setup(self):
         self.background_1 = arcade.load_texture("../resources/maps/cavernaBattleScreen.png")
         self.background_2 = arcade.load_texture("../resources/maps/desiertoBattleScreen.png")
         self.current_background = self.background_1
+        self.enemy_sprite = arcade.load_texture("../resources/characters/Enemy/Armadura_viviente.png")
+        self.player_texture = arcade.load_spritesheet(
+            "../resources/characters/MainCharacterAndCorpse/PlayerNotFinal.png",  # ruta de tu spritesheet
+            sprite_width=32,
+            sprite_height=32,
+            columns=3,
+            count=12
+        )
+        self.player_frame = self.player_texture[10]  # Frame específico: fila 3, columna 2 (índice 10)
+
 
         # Definir los botones con su posición, etiqueta y tecla asociada
         self.buttons = [
@@ -61,6 +81,10 @@ class BattleView(arcade.View):
             self.set_message(f"¡Atacaste! El enemigo ha perdido {damage} HP.", 2)
             self.state = "enemy_wait"
             self.enemy_timer = 1.0  # Espera 1 segundo antes de "Turno enemigo"
+        # Animación del jugador atacando
+        self.attack_animation = True
+        self.attack_timer = 0.3  # duración total del golpe
+        self.attacker = "player"
 
     def enemy_turn(self):
         damage = 8
@@ -70,6 +94,10 @@ class BattleView(arcade.View):
             self.set_message("Has muerto...", 3)
         else:
             self.set_message(f"¡Te atacan! Has perdido {damage} HP.", 2)
+        # Animación del enemigo atacando
+        self.attack_animation = True
+        self.attack_timer = 0.3
+        self.attacker = "enemy"
 
     def draw_button(self, x, y, width, height, text):
         """Dibuja un botón rectangular con texto centrado"""
@@ -87,6 +115,19 @@ class BattleView(arcade.View):
             arcade.draw_lrwh_rectangle_textured(
                 0, 0, self.window.width, self.window.height, self.current_background
             )
+
+        if self.player_frame:
+            arcade.draw_texture_rectangle(
+                self.player_pos[0], self.player_pos[1],
+                64, 64,  # Puedes ajustar el tamaño si lo ves muy pequeño o grande
+                self.player_frame
+            )
+
+        if self.enemy_sprite:
+            arcade.draw_texture_rectangle(self.enemy_pos[0], self.enemy_pos[1],
+                                          self.enemy_sprite.width, self.enemy_sprite.height,
+                                          self.enemy_sprite)
+
         # Título superior
         arcade.draw_text(
             "BATTLE",
@@ -166,3 +207,24 @@ class BattleView(arcade.View):
             if self.enemy_timer <= 0:
                 self.enemy_turn()
                 self.state = "player_turn"
+
+        # Animación de ataque (desplazamiento)
+        if self.attack_animation:
+            self.attack_timer -= delta_time
+            shift = 10
+
+            if self.attacker == "player":
+                if self.attack_timer > 0.15:
+                    self.player_pos[0] += shift  # avanza
+                else:
+                    self.player_pos[0] -= shift  # retrocede
+            elif self.attacker == "enemy":
+                if self.attack_timer > 0.15:
+                    self.enemy_pos[0] -= shift
+                else:
+                    self.enemy_pos[0] += shift
+
+            if self.attack_timer <= 0:
+                self.attack_animation = False
+                self.player_pos = [100, 150]
+                self.enemy_pos = [600, 350]
