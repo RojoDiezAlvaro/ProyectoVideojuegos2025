@@ -87,7 +87,7 @@
          "encoding":"base64",
          "height":16,
          "id":19,
-         "name":"Capa de patrones 1",
+         "name":"furniture_blocking",
          "opacity":1,
          "type":"tilelayer",
          "visible":true,
