@@ -90,7 +90,7 @@ class BattleView(arcade.View):
         self.attacker = "player"
 
     def enemy_turn(self):
-        damage = 8
+        damage = 100
         self.player_hp -= damage
         if self.player_hp <= 0:
             self.player_hp = 0
@@ -98,6 +98,8 @@ class BattleView(arcade.View):
             self.state = "battle_lost"
         else:
             self.set_message(f"¡Te atacan! Has perdido {damage} HP.", 2)
+            self.state = "player_turn"
+
         # Animación del enemigo atacando
         self.attack_animation = True
         self.attack_timer = 0.3
@@ -199,18 +201,25 @@ class BattleView(arcade.View):
                         self.set_message("Turno enemigo...", 1)
                         self.state = "enemy_attack"
                         self.enemy_timer = 1.0
+
+                    elif self.state == "battle_lost":
+                        self.previous_view.player_sprite.center_x = self.return_x
+                        self.previous_view.player_sprite.center_y = self.return_y
+                        self.window.show_view(self.previous_view)
+
                     elif self.state == "enemy_attack":
                         self.enemy_turn()
-                        self.state = "player_turn"
+                        #if self.state != "battle_lost":
+                            #self.state = "player_turn"
+
                     elif self.state == "battle_won":
                         # Ya se mostró el mensaje "¡Enemigo derrotado!", ahora salimos
                         self.previous_view.player_sprite.center_x = self.return_x
                         self.previous_view.player_sprite.center_y = self.return_y
                         self.window.show_view(self.previous_view)
-                    elif self.state == "battle_lost":
-                        self.previous_view.player_sprite.center_x = self.return_x
-                        self.previous_view.player_sprite.center_y = self.return_y
-                        self.window.show_view(self.previous_view)
+
+
+
                     else:
                         self.set_message("¿Qué vas a hacer?", duration=9999)
 
@@ -219,7 +228,6 @@ class BattleView(arcade.View):
             self.enemy_timer -= delta_time
             if self.enemy_timer <= 0:
                 self.enemy_turn()
-                self.state = "player_turn"
 
         # Animación de ataque (desplazamiento)
         if self.attack_animation:
