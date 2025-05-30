@@ -3,6 +3,7 @@ Battle View
 """
 
 import arcade
+import random
 import rpg.constants as constants
 class BattleView(arcade.View):
     def __init__(self, previous_view, player_x, player_y):
@@ -74,7 +75,13 @@ class BattleView(arcade.View):
         self.message_timer = duration
 
     def player_attack(self):
-        damage = 10
+        damage_prob = random.randint(0, 9)
+        if damage_prob == 9:
+            damage = 15
+        elif damage_prob == 0:
+            damage = 0
+        else:
+            damage = 10
         self.enemy_hp -= damage
         if self.enemy_hp <= 0:
             self.enemy_hp = 0
@@ -89,8 +96,21 @@ class BattleView(arcade.View):
         self.attack_timer = 0.3  # duración total del golpe
         self.attacker = "player"
 
+        return damage
+
+    def try_escape(self):
+        escape_success = random.random() < 0.5  # 50% de probabilidad
+        if escape_success:
+            self.set_message("¡Escapaste con éxito!", 2)
+            self.state = "exploration"  # O el estado que uses fuera de batalla
+            self.window.show_view(self.window.views["game"])
+        else:
+            self.set_message("¡No pudiste escapar!", 2)
+            self.state = "enemy_wait"
+            self.enemy_timer = 1.0  # Entra turno del enemigo
+
     def enemy_turn(self):
-        damage = 100
+        damage = 1
         self.player_hp -= damage
         if self.player_hp <= 0:
             self.player_hp = 0
@@ -172,6 +192,8 @@ class BattleView(arcade.View):
                     self.player_attack()
                 else:
                     self.message = f"{button['label']} not implemented yet"
+        if self.state == "player_turn" and symbol == arcade.key.F:
+            self.try_escape()
 
     def on_mouse_press(self, x: float, y: float, button: int, modifiers: int):
         """Detecta clics del ratón y verifica si un botón fue pulsado"""
