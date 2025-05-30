@@ -1,15 +1,11 @@
-import os
-
 import arcade
-
-from rpg.constants import STARTING_Y, STARTING_X
-from rpg.sprites.character_sprite import CharacterSprite
+from rpg.constants import STARTING_Y, STARTING_X, SPRITE_SIZE
+from rpg.sprites.character_sprite import CharacterSprite, Direction, SPRITE_INFO
 
 
 class PlayerSprite(CharacterSprite):
     def __init__(self, sheet_name):
         super().__init__(sheet_name)
-        self.player_sprite = arcade.Sprite("../resources/characters/MainCharacterAndCorpse/PlayerNotFinal.png")
         self.sound_update = 0
         self.footstep_sound = arcade.load_sound(":sounds:sonidosPasos .wav")
         self.corpse_sprite = arcade.Sprite("../resources/characters/MainCharacterAndCorpse/CorpseNotFinal.png")
@@ -21,72 +17,106 @@ class PlayerSprite(CharacterSprite):
         self.last_checkpoint_y = None
         self.last_checkpoint_map = None
         self.current_map = None
+        #fantasma
+        self.ghost_textures = arcade.load_spritesheet(
+            "../resources/characters/MainCharacterAndCorpse/Fantasma.png",
+            sprite_width=SPRITE_SIZE,
+            sprite_height=SPRITE_SIZE,
+            columns=3,
+            count=12
+        )
 
     def on_update(self, delta_time):
-        super().on_update(delta_time)
-        saved_x = self.center_x
-        saved_y = self.center_y
-        if not self.change_x and not self.change_y:
-            self.sound_update = 0
+        if self.is_ghost:
+            # Evitar animar si no se mueve
+            if not self.change_x and not self.change_y:
+                return
+
+            # Manejar animación del fantasma
+            self.should_update = (self.should_update + 1) % 4
+            if self.should_update != 0:
+                return
+
+            self.cur_texture_index += 1
+
+            # Determinar dirección
+            direction = Direction.LEFT
+            slope = self.change_y / (self.change_x + 0.0001)
+            if abs(slope) < 0.8:
+                direction = Direction.RIGHT if self.change_x > 0 else Direction.LEFT
+            else:
+                direction = Direction.UP if self.change_y > 0 else Direction.DOWN
+
+            if self.cur_texture_index not in SPRITE_INFO[direction]:
+                self.cur_texture_index = SPRITE_INFO[direction][0]
+
+            # Aplicar textura de fantasma
+            self.texture = self.ghost_textures[self.cur_texture_index]
+
+            # Comprobar interacción con el cadáver
+            self.interact_with_corpse()
             return
 
-        if self.should_update > 3:
-            self.sound_update += 1
+        # Si no es fantasma, animación y lógica normal
+        super().on_update(delta_time)
 
-        if self.sound_update >= 3:
-            arcade.play_sound(self.footstep_sound)
-            self.sound_update = 0
-        self.interact_with_corpse()
-
-        if self.corpse_exists:
+        # Actualizar cadáver si existe
+        if self.corpse_exists and self.corpse_sprite:
             self.corpse_sprite.update()
-
-        # Revisión de interacción con cadáver
-        if self.is_ghost:
-            self.player_sprite = arcade.Sprite("../resources/characters/MainCharacterAndCorpse/Fantasma.png")
-            self.interact_with_corpse()
-            # codigo añadido sin probar(excluyendo las declaraciones en el innit)---------------------------------------------
 
     #sistema de checkpoints
     def return_to_checkpoint(self):
         if self.last_checkpoint_x is not None and self.last_checkpoint_y is not None and self.last_checkpoint_map == self.current_map:
-            self.player_sprite.center_x = self.last_checkpoint_x
-            self.player_sprite.center_y = self.last_checkpoint_y
+            self.center_x = self.last_checkpoint_x
+            self.center_y = self.last_checkpoint_y
+            print(f"Volviendo al checkpoint: {self.last_checkpoint_x}, {self.last_checkpoint_y}")
+            self.change_x = 0
+            self.change_y = 0
+
         else:
-            self.player_sprite.center_x = self.starter_checkpoint_x
-            #
-            self.player_sprite.center_y = self.starter_checkpoint_y
+            self.center_x = self.starter_checkpoint_x
+            self.center_y = self.starter_checkpoint_y
+            print(f"Volviendo al inicio: {self.starter_checkpoint_x}, {self.starter_checkpoint_y}")
+            self.change_x = 0
+            self.change_y = 0
+
 
     #codigo añadido sin probar(exluyendo las declaraciones en el innit)-----------------------
     #código relacionado a la muerte y el "modo fantasma"
-    def is_ghost(self):
+    def is_ghost_function(self):
         return self.is_ghost
 
 
     def player_death(self):
-        self.spawn_corpse_at(self.player_sprite.center_x, self.player_sprite.center_y)
+        self.spawn_corpse_at(self.center_x, self.center_y)
         self.return_to_checkpoint()
         self.is_ghost = True
-        self.player_sprite = arcade.Sprite("Fantasma.png")
+        self.cur_texture_index = 0
+        self.texture = self.ghost_textures[self.cur_texture_index]
+
 
     def spawn_corpse_at(self, x, y):
         # Crear sprite del cadáver
-        self.corpse_sprite = arcade.Sprite("../resources/characters/MainCharacterAndCorpse/CorpseNotFinal.png", center_x=x, center_y=y)
-
+        self.corpse_sprite = arcade.Sprite(
+            "../resources/characters/MainCharacterAndCorpse/CorpseNotFinal.png",
+            center_x=x,
+            center_y=y
+        )
         # Hacer que sea visible e interactuable (si lo necesitas)
         self.corpse_sprite.visible = True
         self.corpse_exists = True
-        self.draw()
+
+
+
 
     def interact_with_corpse(self):
-        #meter fuera de def en on update
         if self.corpse_exists and self.corpse_sprite is not None:
-            if arcade.check_for_collision(self.player_sprite, self.corpse_sprite):
-                # Eliminar el cadáver
+            if arcade.check_for_collision(self, self.corpse_sprite):
+                print("Colisión con cadáver detectada")  # DEBUG
+                # Eliminar cadáver
                 self.corpse_sprite = None
                 self.corpse_exists = False
-
-                # Restaurar jugador a estado normal
+                # Restaurar estado
                 self.is_ghost = False
-                self.player_sprite = arcade.Sprite("../resources/characters/MainCharacterAndCorpse/PlayerNotFinal.png.png")
-                self.player_sprite.can_collide = True
+                self.cur_texture_index = 0
+                self.texture = self.textures[self.cur_texture_index]

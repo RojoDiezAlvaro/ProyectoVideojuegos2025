@@ -14,8 +14,6 @@ from arcade.experimental.lights import Light
 from pyglet.math import Vec2
 from rpg.message_box import MessageBox
 from rpg.views.battle_view import BattleView
-from rpg.views.puzzle_view import PuzzleView
-
 from rpg.sprites.character_sprite import CharacterSprite
 from rpg.sprites.player_sprite import PlayerSprite
 
@@ -384,6 +382,10 @@ class GameView(arcade.View):
             # Draw the player
             self.player_sprite_list.draw()
 
+            #dibujar cadaver
+            if self.player_sprite.corpse_exists and self.player_sprite.corpse_sprite:
+                self.player_sprite.corpse_sprite.draw()
+
         if cur_map.light_layer:
             # Draw the light layer to the screen.
             # This fills the entire screen with the lit version
@@ -432,7 +434,8 @@ class GameView(arcade.View):
         # Calculate speed based on the keys pressed
         self.player_sprite.change_x = 0
         self.player_sprite.change_y = 0
-
+        if self.player_sprite.corpse_exists and self.player_sprite.corpse_sprite:
+            self.player_sprite.corpse_sprite.draw()
         MOVING_UP = (
             self.up_pressed
             and not self.down_pressed
@@ -563,7 +566,7 @@ class GameView(arcade.View):
             # No doors, scroll normally
             self.scroll_to_player()
 
-        if PlayerSprite.is_ghost(self.player_sprite):
+        if PlayerSprite.is_ghost_function(self.player_sprite):
             self.noclip_status = True
             self.setup_physics()
         else:
@@ -585,16 +588,17 @@ class GameView(arcade.View):
             self.left_pressed = True
         elif key in constants.KEY_RIGHT:
             self.right_pressed = True
-
-
-
-
+        elif key in constants.INVENTORY:
+            self.window.show_view(self.window.views["puzzle"])
         elif key == arcade.key.ESCAPE:
             self.window.show_view(self.window.views["main_menu"])
         elif key in constants.SEARCH:
             self.search()
-
-
+        elif key == arcade.key.C:
+            battle_view = BattleView(previous_view=self, player_x=self.player_sprite.center_x,
+                                     player_y=self.player_sprite.center_y,player=self.player_sprite)
+            battle_view.setup()
+            self.window.show_view(battle_view)
 
         elif key == arcade.key.KEY_1:
             self.selected_item = 1
@@ -661,16 +665,7 @@ class GameView(arcade.View):
                     self, "Checkpoint guardado"
                 )
             elif "cambioAPuzzle" in sprite.properties:
-                puzzle_view = PuzzleView(self)
-                puzzle_view.setup()
-                self.window.show_view(puzzle_view)
-
-            elif"Enemigo" in sprite.properties:
-                battle_view = BattleView(previous_view=self, player_x=self.player_sprite.center_x,
-                                         player_y=self.player_sprite.center_y)
-                battle_view.setup()
-                self.window.show_view(battle_view)
-
+                self.window.show_view(self.window.views["puzzle"])
             else:
                 print(
                     "The 'item' property was not set for the sprite. Can't get any items from this."
