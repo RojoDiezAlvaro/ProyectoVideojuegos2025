@@ -304,7 +304,6 @@ class GameView(arcade.View):
 
     def noclip(self, *args, status: bool):
         self.noclip_status = status
-
         self.setup_physics()
 
     def hyper(self, *args, status: bool):
@@ -517,6 +516,9 @@ class GameView(arcade.View):
             self.player_sprite.change_y = -constants.MOVEMENT_SPEED / 1.5
             self.player_sprite.change_x = constants.MOVEMENT_SPEED / 1.5
 
+        if self.noclip_status:
+            self.player_sprite.center_x += self.player_sprite.change_x
+            self.player_sprite.center_y += self.player_sprite.change_y
         # Call update to move the sprite
         self.physics_engine.update()
 
@@ -629,6 +631,8 @@ class GameView(arcade.View):
                 self.enable_debug_menu()
             else:
                 self.disable_debug_menu()
+        if key == arcade.key.I:
+            self.window.show_view(self.window.views["inventory"])
 
     def close_message_box(self):
         self.message_box = None
