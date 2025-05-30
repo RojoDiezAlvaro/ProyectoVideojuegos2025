@@ -71,18 +71,14 @@ class PlayerSprite(CharacterSprite):
             self.center_x = self.last_checkpoint_x
             self.center_y = self.last_checkpoint_y
             print(f"Volviendo al checkpoint: {self.last_checkpoint_x}, {self.last_checkpoint_y}")
-            self.change_x = 0
-            self.change_y = 0
-
         else:
-            self.center_x = self.starter_checkpoint_x
-            self.center_y = self.starter_checkpoint_y
-            print(f"Volviendo al inicio: {self.starter_checkpoint_x}, {self.starter_checkpoint_y}, {self.current_map}")
-            self.change_x = 0
-            self.change_y = 0
+            #self.center_x = self.starter_checkpoint_x
+            #self.center_y = self.starter_checkpoint_y
+            print(f"Volviendo al inicio (ajustado): {self.center_x}, {self.center_y}, mapa: {self.current_map}")
 
+        self.change_x = 0
+        self.change_y = 0
 
-    #codigo añadido sin probar(exluyendo las declaraciones en el innit)-----------------------
     #código relacionado a la muerte y el "modo fantasma"
     def is_ghost_function(self):
         return self.is_ghost

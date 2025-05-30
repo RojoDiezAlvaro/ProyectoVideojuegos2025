@@ -229,11 +229,19 @@ class BattleView(arcade.View):
                         self.state = "enemy_attack"
                         self.enemy_timer = 1.0
 
+
                     elif self.state == "battle_lost":
-                        self.previous_view.player_sprite.center_x = self.return_x
-                        self.previous_view.player_sprite.center_y = self.return_y
-                        self.window.show_view(self.previous_view)
+                        # Usa el mapa guardado en el checkpoint o el mapa inicial
+                        checkpoint_map = self.previous_view.player_sprite.last_checkpoint_map or constants.STARTING_MAP
+                        # Usa las coordenadas en tiles (starter_checkpoint_x/y) que ya están pensadas para switch_map
+                        checkpoint_x = self.previous_view.player_sprite.starter_checkpoint_x
+                        checkpoint_y = self.previous_view.player_sprite.starter_checkpoint_y
+                        # Activa estado de fantasma y reposiciona si aplica
                         self.previous_view.player_sprite.player_death()
+                        # Cambia de mapa correctamente
+                        self.previous_view.switch_map(checkpoint_map, checkpoint_x, checkpoint_y)
+                        # Muestra la vista principal del juego
+                        self.window.show_view(self.previous_view)
 
                     elif self.state == "enemy_attack":
                         self.enemy_turn()
