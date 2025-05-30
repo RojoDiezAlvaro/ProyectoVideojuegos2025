@@ -95,6 +95,7 @@ class BattleView(arcade.View):
         if self.player_hp <= 0:
             self.player_hp = 0
             self.set_message("Has muerto...", 3)
+            self.state = "battle_lost"
         else:
             self.set_message(f"¡Te atacan! Has perdido {damage} HP.", 2)
         # Animación del enemigo atacando
@@ -203,6 +204,10 @@ class BattleView(arcade.View):
                         self.state = "player_turn"
                     elif self.state == "battle_won":
                         # Ya se mostró el mensaje "¡Enemigo derrotado!", ahora salimos
+                        self.previous_view.player_sprite.center_x = self.return_x
+                        self.previous_view.player_sprite.center_y = self.return_y
+                        self.window.show_view(self.previous_view)
+                    elif self.state == "battle_lost":
                         self.previous_view.player_sprite.center_x = self.return_x
                         self.previous_view.player_sprite.center_y = self.return_y
                         self.window.show_view(self.previous_view)
