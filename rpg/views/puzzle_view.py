@@ -35,20 +35,13 @@ class Tile:
 
 
 class PuzzleView(arcade.View):
-    def __init__(self,previous_view):
+    def __init__(self,window_width,window_height):
         super().__init__()
-        self.previous_view = previous_view
         self.started = False
         self.tiles = []
         self.selected_tile = None
         self.solved = False  # Bandera de victoria
         arcade.set_background_color(arcade.color.BLACK)
-        self.full_message = ""
-        self.displayed_message = ""
-        self.message_char_index = 0
-        self.message_speed = 0.05  # segundos entre letras
-        self.message_timer = 0
-        self.finished_message = False
 
     def setup(self):
         self.tiles = []
@@ -86,8 +79,9 @@ class PuzzleView(arcade.View):
                 arcade.draw_rectangle_outline(x, y, TILE_WIDTH, TILE_HEIGHT, arcade.color.RED, 3)
 
         if self.solved:
+            # una vez resuelto el puzzle, dirigir a mapa de momento solo se dibuja un mensaje
             arcade.draw_text(
-                self.displayed_message,
+                "¡Puzzle resuelto!",
                 SCREEN_WIDTH // 2,
                 SCREEN_HEIGHT // 2,
                 arcade.color.YELLOW,
@@ -98,7 +92,8 @@ class PuzzleView(arcade.View):
             )
 
     def on_mouse_press(self, x, y, button, modifiers):
-
+        if self.solved:
+            return  # No permitir más clics si ya fue resuelto
 
         col = x // TILE_WIDTH
         row = (SCREEN_HEIGHT - y) // TILE_HEIGHT
@@ -115,19 +110,8 @@ class PuzzleView(arcade.View):
         else:
             self.selected_tile = clicked_tile
 
-        if self.is_solved() and not self.solved:
-            self.solved = True
-            self.full_message = (
-                "El sol abrasaba las dunas infinitas. Cerró los ojos y recordó: "
-        "el viento entre los árboles, la risa de su madre, su padre llamando a Sol, su caballo. "
-        "Campos verdes, pan casero, tardes felices. Luego llegó la tormenta. "
-        "Todo desapareció. Solo queda el recuerdo... y la voluntad de seguir.                                                                                                                                                                           "
-        "                                                                                                         "
-        )
-            self.displayed_message = ""
-            self.message_char_index = 0
-            self.message_timer = self.message_speed
-            self.finished_message = False
+        if self.is_solved():
+            self.solved = True  # Activar bandera de victoria
 
     def get_tile_at(self, row, col):
         for tile in self.tiles:
@@ -137,23 +121,3 @@ class PuzzleView(arcade.View):
 
     def is_solved(self):
         return all(tile.is_in_correct_position() for tile in self.tiles)
-
-    def on_update(self, delta_time: float):
-        if self.solved and not self.finished_message:
-            self.message_timer -= delta_time
-            if self.message_timer <= 0 and self.message_char_index < len(self.full_message):
-                self.displayed_message += self.full_message[self.message_char_index]
-                self.message_char_index += 1
-                self.message_timer = self.message_speed
-
-            # Cuando se ha escrito
-            if self.message_char_index >= len(self.full_message):
-                self.finished_message = True
-                self.end_message_timer = 2.0  # Espera 2 segundos más antes de cambiar de vista
-
-        # Cuenta atrás antes de salir de la vista
-        if self.finished_message:
-            self.end_message_timer -= delta_time
-            if self.end_message_timer <= 0:
-                # CAMBIO DE VISTA AQUÍ
-                self.window.show_view(self.previous_view)
