@@ -1,7 +1,8 @@
 import arcade
+
+from rpg import constants
 from rpg.constants import STARTING_Y, STARTING_X, SPRITE_SIZE
 from rpg.sprites.character_sprite import CharacterSprite, Direction, SPRITE_INFO
-
 
 class PlayerSprite(CharacterSprite):
     def __init__(self, sheet_name):
@@ -16,7 +17,7 @@ class PlayerSprite(CharacterSprite):
         self.last_checkpoint_x = None
         self.last_checkpoint_y = None
         self.last_checkpoint_map = None
-        self.current_map = None
+        self.current_map = constants.STARTING_MAP
         #fantasma
         self.ghost_textures = arcade.load_spritesheet(
             "../resources/characters/MainCharacterAndCorpse/Fantasma.png",
@@ -76,7 +77,7 @@ class PlayerSprite(CharacterSprite):
         else:
             self.center_x = self.starter_checkpoint_x
             self.center_y = self.starter_checkpoint_y
-            print(f"Volviendo al inicio: {self.starter_checkpoint_x}, {self.starter_checkpoint_y}")
+            print(f"Volviendo al inicio: {self.starter_checkpoint_x}, {self.starter_checkpoint_y}, {self.current_map}")
             self.change_x = 0
             self.change_y = 0
 

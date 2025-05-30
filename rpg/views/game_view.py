@@ -257,7 +257,6 @@ class GameView(arcade.View):
         start_y = constants.STARTING_Y
         self.switch_map(constants.STARTING_MAP, start_x, start_y)
         self.cur_map_name = constants.STARTING_MAP
-
         # Set up the hotbar
         self.load_hotbar_sprites()
 
