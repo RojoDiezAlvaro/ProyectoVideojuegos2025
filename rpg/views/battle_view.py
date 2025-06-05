@@ -18,7 +18,7 @@ class BattleView(arcade.View):
         self.background_2 = None
         self.current_background = None
         arcade.set_background_color(arcade.color.BLUE)
-        # Lista de botones con sus posiciones, etiquetas y teclas asociadas
+        # Lista de botones con sus posiciones, etiquetas y teclas asociadas, además de vida de los personajes
         self.buttons = []
         self.player_hp = 150
         self.enemy_hp = 50
