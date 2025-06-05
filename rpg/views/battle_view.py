@@ -8,14 +8,11 @@ import rpg.constants as constants
 
 
 class BattleView(arcade.View):
-    def __init__(self, previous_view, player_x, player_y, player):
+    def __init__(self, previous_view, player_x, player_y):
         super().__init__()
-        self.player_sprite = player
         self.previous_view = previous_view  # Vista anterior (mundo, mapa, etc.)
         self.return_x = player_x
         self.return_y = player_y
-
-        super().__init__()
         self.started = False
         self.background_1 = None
         self.background_2 = None
@@ -23,8 +20,8 @@ class BattleView(arcade.View):
         arcade.set_background_color(arcade.color.BLUE)
         # Lista de botones con sus posiciones, etiquetas y teclas asociadas
         self.buttons = []
-        self.player_hp = 100
-        self.enemy_hp = 20
+        self.player_hp = 150
+        self.enemy_hp = 50
         self.message = "¿Qué vas a hacer?"
         self.message_timer = 0
         self.full_message = ""  # Mensaje completo
@@ -115,7 +112,17 @@ class BattleView(arcade.View):
             self.enemy_timer = 1.0  # Entra turno del enemigo
 
     def enemy_turn(self):
-        damage = 800
+        damage_prob = random.randint(0, 50)
+        if damage_prob <= 15:
+            damage = 10
+        elif damage_prob <= 25:
+            damage = 20
+        elif damage_prob <= 35:
+            damage = 30
+        elif damage_prob <= 45:
+            damage = 40
+        else:
+            damage = 50
         self.player_hp -= damage
         if self.player_hp <= 0:
             self.player_hp = 0

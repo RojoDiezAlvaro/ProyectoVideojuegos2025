@@ -1307,17 +1307,6 @@
         }, 
         {
          "draworder":"topdown",
-         "id":8,
-         "name":"enemigos",
-         "objects":[],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":true,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "draworder":"topdown",
          "id":9,
          "name":"emptied",
          "objects":[],
@@ -1349,6 +1338,24 @@
                  "width":32,
                  "x":2432,
                  "y":191.833333333333
+                }, 
+                {
+                 "gid":1028,
+                 "height":32,
+                 "id":270,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Enemigo",
+                         "type":"string",
+                         "value":""
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":868.666666666667,
+                 "y":234.666666666667
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1357,7 +1364,7 @@
          "y":0
         }],
  "nextlayerid":10,
- "nextobjectid":268,
+ "nextobjectid":271,
  "orientation":"orthogonal",
  "properties":[
         {

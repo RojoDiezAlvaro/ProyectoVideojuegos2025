@@ -16,6 +16,8 @@ from rpg.message_box import MessageBox
 from rpg.views.battle_view import BattleView
 from rpg.sprites.character_sprite import CharacterSprite
 from rpg.sprites.player_sprite import PlayerSprite
+from rpg.views.puzzle_view import PuzzleView
+
 
 
 class DebugMenu(arcade.gui.UIBorder, arcade.gui.UIWindowLikeMixin):
@@ -597,7 +599,7 @@ class GameView(arcade.View):
             self.search()
         elif key == arcade.key.C:
             battle_view = BattleView(previous_view=self, player_x=self.player_sprite.center_x,
-                                     player_y=self.player_sprite.center_y,player=self.player_sprite)
+                                     player_y=self.player_sprite.center_y)
             battle_view.setup()
             self.window.show_view(battle_view)
 
@@ -668,7 +670,15 @@ class GameView(arcade.View):
                     self, "Checkpoint guardado"
                 )
             elif "cambioAPuzzle" in sprite.properties:
-                self.window.show_view(self.window.views["puzzle"])
+                puzzle_view = PuzzleView(self)
+                puzzle_view.setup()
+                self.window.show_view(puzzle_view)
+
+            elif "Enemigo" in sprite.properties:
+                battle_view = BattleView(previous_view=self, player_x=self.player_sprite.center_x,
+                                         player_y=self.player_sprite.center_y)
+                battle_view.setup()
+                self.window.show_view(battle_view)
             else:
                 print(
                     "The 'item' property was not set for the sprite. Can't get any items from this."
