@@ -69,9 +69,14 @@ class PlayerSprite(CharacterSprite):
     def return_to_checkpoint(self):
         print("control: " + str(self.last_checkpoint_x) + "__" + str(self.last_checkpoint_y) + "__" + self.last_checkpoint_map)
         if self.last_checkpoint_x is not None and self.last_checkpoint_y is not None and self.last_checkpoint_map == self.current_map:
-            self.center_x = self.last_checkpoint_x
-            self.center_y = self.last_checkpoint_y
-            print(f"Volviendo al checkpoint: {self.last_checkpoint_x}, {self.last_checkpoint_y}")
+            try:
+                self.center_x = self.last_checkpoint_x
+                self.center_y = self.last_checkpoint_y
+                print(f"Volviendo al checkpoint: {self.last_checkpoint_x}, {self.last_checkpoint_y}")
+            except:
+                self.center_x = self.starter_checkpoint_x
+                self.center_y = self.starter_checkpoint_y
+                print(f"Volviendo al inicio (ajustado): {self.center_x}, {self.center_y}, mapa: {self.current_map}")
         else:
             self.center_x = self.starter_checkpoint_x
             self.center_y = self.starter_checkpoint_y

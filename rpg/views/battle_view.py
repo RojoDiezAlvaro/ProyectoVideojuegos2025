@@ -114,13 +114,13 @@ class BattleView(arcade.View):
     def enemy_turn(self):
         damage_prob = random.randint(0, 50)
         if damage_prob <= 15:
-            damage = 150
+            damage = 15
         elif damage_prob <= 25:
-            damage = 200
+            damage = 20
         elif damage_prob <= 35:
-            damage = 300
+            damage = 30
         elif damage_prob <= 45:
-            damage = 450
+            damage = 45
         else:
             damage = 55
         self.player_hp -= damage
