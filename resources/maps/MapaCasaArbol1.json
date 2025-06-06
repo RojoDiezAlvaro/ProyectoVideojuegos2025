@@ -2,6 +2,7 @@
  "compressionlevel":-1,
  "height":16,
  "infinite":false,
+ "music": "MusicaDesierto2.wav",
  "layers":[
         {
          "compression":"zlib",
@@ -169,6 +170,24 @@
                  "width":32,
                  "x":129.201839550332,
                  "y":131.114971895759
+                }, 
+                {
+                 "gid":1029,
+                 "height":32,
+                 "id":15,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Enemigo",
+                         "type":"string",
+                         "value":""
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":32,
+                 "y":190
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -245,7 +264,7 @@
          "y":0
         }],
  "nextlayerid":12,
- "nextobjectid":15,
+ "nextobjectid":17,
  "orientation":"orthogonal",
  "properties":[
         {
