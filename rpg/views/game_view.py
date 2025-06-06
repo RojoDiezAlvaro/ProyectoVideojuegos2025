@@ -202,7 +202,7 @@ class GameView(arcade.View):
         """
         self.last_map_name = self.cur_map_name
         self.cur_map_name = map_name
-        self.player_sprite.current_map_name = map_name
+        self.player_sprite.current_map = map_name
 
         #sistema checkpoints
         PlayerSprite.starter_checkpoint_x = start_x
@@ -669,6 +669,7 @@ class GameView(arcade.View):
                 self.message_box = MessageBox(
                     self, "Checkpoint guardado"
                 )
+                print("coordenadas guardadas: " + str(self.player_sprite.last_checkpoint_x) + "__" + str(self.player_sprite.last_checkpoint_y) + "__" + self.cur_map_name)
             elif "cambioAPuzzle" in sprite.properties:
                 puzzle_view = PuzzleView(self)
                 puzzle_view.setup()

@@ -49,18 +49,6 @@
                  "width":32,
                  "x":1770,
                  "y":700.666666666667
-                }, 
-                {
-                 "gid":343,
-                 "height":32,
-                 "id":228,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":1770,
-                 "y":669.666666666667
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1307,6 +1295,29 @@
         }, 
         {
          "draworder":"topdown",
+         "id":10,
+         "name":"escalera",
+         "objects":[
+                {
+                 "gid":343,
+                 "height":32,
+                 "id":288,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":1770,
+                 "y":669.333333333333
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
          "id":9,
          "name":"emptied",
          "objects":[],
@@ -1356,6 +1367,168 @@
                  "width":32,
                  "x":868.666666666667,
                  "y":234.666666666667
+                }, 
+                {
+                 "gid":1030,
+                 "height":32,
+                 "id":279,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Enemigo",
+                         "type":"string",
+                         "value":""
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":1095.33333333333,
+                 "y":124
+                }, 
+                {
+                 "gid":1030,
+                 "height":32,
+                 "id":280,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Enemigo",
+                         "type":"string",
+                         "value":""
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":575.333333333333,
+                 "y":212.666666666667
+                }, 
+                {
+                 "gid":1030,
+                 "height":32,
+                 "id":281,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Enemigo",
+                         "type":"string",
+                         "value":""
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":1217.33333333333,
+                 "y":524
+                }, 
+                {
+                 "gid":1030,
+                 "height":32,
+                 "id":282,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Enemigo",
+                         "type":"string",
+                         "value":""
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":1272.66666666667,
+                 "y":662.666666666667
+                }, 
+                {
+                 "gid":1030,
+                 "height":32,
+                 "id":283,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Enemigo",
+                         "type":"string",
+                         "value":""
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":1542.66666666667,
+                 "y":518
+                }, 
+                {
+                 "gid":1030,
+                 "height":32,
+                 "id":284,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Enemigo",
+                         "type":"string",
+                         "value":""
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":1374.66666666667,
+                 "y":806.666666666667
+                }, 
+                {
+                 "gid":1030,
+                 "height":32,
+                 "id":285,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Enemigo",
+                         "type":"string",
+                         "value":""
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":2266,
+                 "y":143.333333333333
+                }, 
+                {
+                 "gid":1030,
+                 "height":32,
+                 "id":286,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Enemigo",
+                         "type":"string",
+                         "value":""
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":3046.66666666667,
+                 "y":490.666666666667
+                }, 
+                {
+                 "gid":1030,
+                 "height":32,
+                 "id":287,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Enemigo",
+                         "type":"string",
+                         "value":""
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":1766.66666666667,
+                 "y":410.666666666667
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1363,8 +1536,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":10,
- "nextobjectid":271,
+ "nextlayerid":11,
+ "nextobjectid":289,
  "orientation":"orthogonal",
  "properties":[
         {
