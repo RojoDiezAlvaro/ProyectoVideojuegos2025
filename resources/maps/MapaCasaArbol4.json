@@ -61,7 +61,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJxjYMANCpkYGIqY8CggACqBeqso0D8KRsFwAjsYB9oFmAAAcYwCmA==",
+         "data":"eJxjYMANCpkYGIqY8CggACqBeqso0D8KBh7MYR5oFwwfsINxoF2ACQCbuAM3",
          "encoding":"base64",
          "height":16,
          "id":5,
@@ -92,12 +92,12 @@
                         {
                          "name":"start_x",
                          "type":"int",
-                         "value":86
+                         "value":50
                         }, 
                         {
                          "name":"start_y",
                          "type":"int",
-                         "value":103
+                         "value":35
                         }],
                  "rotation":0,
                  "type":"",
@@ -207,6 +207,24 @@
                  "width":32,
                  "x":447.875,
                  "y":415.25
+                }, 
+                {
+                 "gid":932,
+                 "height":32,
+                 "id":42,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Enemigo",
+                         "type":"string",
+                         "value":""
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":256.875175315568,
+                 "y":320.622425629291
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -237,7 +255,7 @@
          "y":0
         }],
  "nextlayerid":12,
- "nextobjectid":42,
+ "nextobjectid":44,
  "orientation":"orthogonal",
  "properties":[
         {
